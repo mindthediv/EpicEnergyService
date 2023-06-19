@@ -6,6 +6,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
@@ -24,11 +26,12 @@ import lombok.Setter;
 @Setter
 public class Municipality {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = true)
-    long province_id;
+    String province_id;
     @Column
-    int municipality_id;
+    String municipality_id;
     @Column(nullable = true)
     String name;
     @ManyToOne(fetch = FetchType.EAGER)
