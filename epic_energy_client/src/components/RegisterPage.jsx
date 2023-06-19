@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import InputGroup from 'react-bootstrap/InputGroup';
-import { Link } from "react-router-dom";
 
 function RegisterPage() {
   const [validated, setValidated] = useState(false);
@@ -92,9 +91,9 @@ function RegisterPage() {
       </Form.Group>
       <Button type="submit">Register</Button>
     </Form>
-    <Link to="/login-page" className="nav-link">
+    {/* <Link to="/login-page" className="nav-link">
               <div className="text-secondary">Already registered? Login!</div>
-            </Link>
+            </Link> */}
             </Col>
       </Row>
     </Container>
