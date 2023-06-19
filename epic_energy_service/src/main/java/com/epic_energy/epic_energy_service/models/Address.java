@@ -5,10 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "adress")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 
 public class Address {
 

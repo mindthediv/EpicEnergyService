@@ -1,7 +1,8 @@
 package com.epic_energy.epic_energy_service.models;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
@@ -13,21 +14,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "municipalities")
-@DiscriminatorValue("municipality")
+@Table(name = "provinces")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "municipality", discriminatorType = DiscriminatorType.STRING)
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Municipality extends Province {
-    @Column(nullable = true)
-    long province_id;
+public class Province {
     @Id
-    int municipality_id;
+    String sign;
     @Column(nullable = true)
     String name;
     @Column(nullable = true)
-    String province_name;
-    
-    
+    String region;
 }
