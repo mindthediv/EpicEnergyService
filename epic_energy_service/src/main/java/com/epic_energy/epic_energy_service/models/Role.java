@@ -1,6 +1,7 @@
 package com.epic_energy.epic_energy_service.models;
 
-import jakarta.annotation.Generated;
+import com.epic_energy.epic_energy_service.enum.ERole;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
