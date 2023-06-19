@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Link } from "react-router-dom";
 
@@ -123,9 +123,6 @@ function RegisterPage() {
     {/* <Link to="/login-page" className="nav-link">
               <div className="text-secondary">Already registered? Login!</div>
             </Link> */}
-            </Col>
-      </Row>
-    </Container>
   );
 }
 
