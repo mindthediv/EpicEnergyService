@@ -8,7 +8,6 @@ import java.util.Set;
 import org.hibernate.annotations.Columns;
 import org.hibernate.annotations.Struct;
 
-import com.GestionePrenotazioni.Project.Security.configurator.SecretCodeConvert;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -31,16 +30,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="utenti")
+@Table(name = "utenti")
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
 
-public class Utente {
-	
-	
+public class User {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -52,29 +50,25 @@ public class Utente {
 	private String cognome;
 	@Column(unique = true, nullable = false)
 	private String email;
-	@Column (nullable = false)
+	@Column(nullable = false)
 	private String password;
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	 @JoinTable(name = "users_roles",
-     joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
-     inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
-)
-private Set<Role> roles = new HashSet<>();
-	@ManyToMany(targetEntity = Prenotazione.class, fetch = FetchType.EAGER)
-	@JoinTable(name="prenotazioni_lista_utenti",joinColumns =   	@JoinColumn(name="utente_id"),inverseJoinColumns = @JoinColumn(name="prenotazione_id"))
-	@JsonIgnore
-	private List<Prenotazione> listaPrenotazioni = new ArrayList<Prenotazione>();
+	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+	private Set<Role> roles = new HashSet<>();
+	// @ManyToMany(targetEntity = Prenotazione.class, fetch = FetchType.EAGER)
+	// @JoinTable(name = "prenotazioni_lista_utenti", joinColumns = @JoinColumn(name
+	// = "utente_id"), inverseJoinColumns = @JoinColumn(name = "prenotazione_id"))
+	// @JsonIgnore
+	// private List<?> listaPrenotazioni = new ArrayList(null)<?>();
 
-//	public Utente(String userName, String nome, String cognome, String email) {
-//		super();
-//		this.userName = userName;
-//		this.nome = nome;
-//		this.pass
-//		this.cognome = cognome;
-//		this.email = email;
-//		
-//	}
-	
-	
-	
+	// public Utente(String userName, String nome, String cognome, String email) {
+	// super();
+	// this.userName = userName;
+	// this.nome = nome;
+	// this.pass
+	// this.cognome = cognome;
+	// this.email = email;
+	//
+	// }
+
 }

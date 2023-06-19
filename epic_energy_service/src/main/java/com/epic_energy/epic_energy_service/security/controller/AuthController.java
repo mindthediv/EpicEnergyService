@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.GestionePrenotazioni.Project.Security.payload.JWTAuthResponse;
-import com.GestionePrenotazioni.Project.Security.payload.LoginDto;
-import com.GestionePrenotazioni.Project.Security.payload.RegisterDto;
-import com.GestionePrenotazioni.Project.Security.service.AuthService;
-
-
-
+import com.epic_energy.epic_energy_service.security.payload.JWTAuthResponse;
+import com.epic_energy.epic_energy_service.security.payload.LoginDto;
+import com.epic_energy.epic_energy_service.security.payload.RegisterDto;
+import com.epic_energy.epic_energy_service.security.service.AuthService;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -27,10 +24,10 @@ public class AuthController {
     }
 
     // Build Login REST API
-    @PostMapping(value = {"/login", "/signin"})
-    public ResponseEntity<JWTAuthResponse> login(@RequestBody LoginDto loginDto){
-           	
-    	String token = authService.login(loginDto);
+    @PostMapping(value = { "/login", "/signin" })
+    public ResponseEntity<JWTAuthResponse> login(@RequestBody LoginDto loginDto) {
+
+        String token = authService.login(loginDto);
 
         JWTAuthResponse jwtAuthResponse = new JWTAuthResponse();
         jwtAuthResponse.setUsername(loginDto.getUserName());
@@ -40,8 +37,8 @@ public class AuthController {
     }
 
     // Build Register REST API
-    @PostMapping(value = {"/register", "/signup"})
-    public ResponseEntity<String> register(@RequestBody RegisterDto registerDto){
+    @PostMapping(value = { "/register", "/signup" })
+    public ResponseEntity<String> register(@RequestBody RegisterDto registerDto) {
         String response = authService.register(registerDto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

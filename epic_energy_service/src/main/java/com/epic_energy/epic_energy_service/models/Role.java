@@ -1,13 +1,7 @@
 package com.epic_energy.epic_energy_service.models;
 
-<<<<<<< HEAD
+import com.epic_energy.epic_energy_service.enumerated.ERole;
 
-
-import jakarta.annotation.Generated;
-=======
-import com.epic_energy.epic_energy_service.enum.ERole;
-
->>>>>>> 76da143f89e1a5b267d3b6b4b5f41537100ea9be
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -29,9 +23,9 @@ import lombok.ToString;
 public class Role {
 
 	@Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Enumerated(EnumType.STRING)
 	private ERole roleName;
 }

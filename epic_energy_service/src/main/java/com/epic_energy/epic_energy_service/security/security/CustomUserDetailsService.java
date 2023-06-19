@@ -10,8 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.GestionePrenotazioni.Project.model.Utente;
-import com.GestionePrenotazioni.Project.repository.UtenteDAO;
+import com.epic_energy.epic_energy_service.models.User;
+import com.epic_energy.epic_energy_service.security.repository.UtenteDAO;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -24,9 +24,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
-          Utente user = userRepository.findByUserNameOrEmail(usernameOrEmail, usernameOrEmail)
-                 .orElseThrow(() ->
-                         new UsernameNotFoundException("User not found with username or email: "+ usernameOrEmail));
+        User user = userRepository.findByUserNameOrEmail(usernameOrEmail, usernameOrEmail)
+                .orElseThrow(() -> new UsernameNotFoundException(
+                        "User not found with username or email: " + usernameOrEmail));
 
         Set<GrantedAuthority> authorities = user
                 .getRoles()
@@ -38,4 +38,3 @@ public class CustomUserDetailsService implements UserDetailsService {
                 authorities);
     }
 }
-
