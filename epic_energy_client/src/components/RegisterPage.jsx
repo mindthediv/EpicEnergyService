@@ -119,10 +119,11 @@ function RegisterPage() {
           Login
         </Link>
       </Button>
-    </Form>
-    {/* <Link to="/login-page" className="nav-link">
+      <Link to="/login-page" className="nav-link">
               <div className="text-secondary">Already registered? Login!</div>
-            </Link> */}
+            </Link>
+    </Form>
+  
   );
 }
 
