@@ -2,7 +2,7 @@ package com.epic_energy.epic_energy_service.security.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,7 @@ import com.epic_energy.epic_energy_service.security.payload.RegisterDto;
 import com.epic_energy.epic_energy_service.security.service.AuthService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/auth")
 public class AuthController {
 

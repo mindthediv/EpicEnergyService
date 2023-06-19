@@ -53,8 +53,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers(HttpMethod.GET, "/api/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/customer").hasRole("ADMIN")
-                        .anyRequest().authenticated())
+                        .requestMatchers("/api/customer").hasRole("ADMIN"))
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint))
                 .sessionManagement(session -> session
