@@ -1,11 +1,15 @@
 package com.epic_energy.epic_energy_service.models;
 
+import org.hibernate.annotations.ManyToAny;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,21 +17,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "municipalities")
-@DiscriminatorValue("municipality")
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Municipality extends Province {
+public class Municipality {
+    @Id
+    private Long id;
     @Column(nullable = true)
     long province_id;
-    @Id
+    @Column
     int municipality_id;
     @Column(nullable = true)
     String name;
-    @Column(nullable = true)
-    String province_name;
-    
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Province province_name;
+
 }
