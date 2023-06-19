@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 import "./App.css";
-import LoginPage from './components/LoginPage';
+import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   async function fetchTest() {
@@ -18,8 +19,12 @@ function App() {
 
   return (
     <div className="App">
-        <RegisterPage/>
-        <LoginPage/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/register-page" element={<RegisterPage />} />
+          <Route path="/login-page" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
