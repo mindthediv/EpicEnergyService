@@ -1,5 +1,7 @@
 package com.epic_energy.epic_energy_service.models;
 
+
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
