@@ -1,8 +1,13 @@
 package com.epic_energy.epic_energy_service.models;
 
+<<<<<<< HEAD
 
 
 import jakarta.annotation.Generated;
+=======
+import com.epic_energy.epic_energy_service.enum.ERole;
+
+>>>>>>> 76da143f89e1a5b267d3b6b4b5f41537100ea9be
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
