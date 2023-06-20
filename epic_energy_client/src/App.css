@@ -81,3 +81,17 @@ body {
   background: rgba(0, 0, 0, 0.461) !important;
 
 }
+
+/* JUMBOTRON */
+.jumbotron {
+  margin-top: 70px !important;
+  height: 250px;
+  background-color: #80808056;
+}
+.mini-jumbotron {
+  margin-top: 35px !important;
+  height: 50%;
+  width: 50%;
+  margin-top: 3em;
+  background-color: #808080a5;
+}
