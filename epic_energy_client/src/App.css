@@ -4,6 +4,7 @@
 body {
   background-image: url(../src/img/index.jpeg);
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Playfair Display', serif;
 }
 
@@ -84,14 +85,29 @@ body {
 
 /* JUMBOTRON */
 .jumbotron {
-  margin-top: 70px !important;
-  height: 250px;
+  margin-top: 5em;
+  height: 15em;
   background-color: #80808056;
+  box-shadow: 0px 0px 7px 0px rgb(109, 109, 109);
 }
 .mini-jumbotron {
-  margin-top: 35px !important;
-  height: 50%;
-  width: 50%;
-  margin-top: 3em;
-  background-color: #808080a5;
+  height: 100%;
+  width: 65%;
+  margin-top: 5em;
+}
+.mini-jumbotron h1 {
+font-size:3.5em;
+}
+.article {
+  margin-top: 5em;
+  height: 18em;
+  width: 62%;
+  background-color: #80808056;
+  box-shadow: 0px 4px 10px 5px rgb(69, 69, 69);
+}
+
+.columns {
+  columns: auto 12rem;
+  column-rule: dotted 2px white;
+  column-gap: 100px;
 }

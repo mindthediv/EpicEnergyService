@@ -1,8 +1,8 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 import Logo from "../img/Logo.png";
-
 function Barra() {
   return (
     <Navbar expand="lg" className="p-0 m-0 fixed-top navbar" style={{height: '70px'}}>
@@ -21,7 +21,8 @@ function Barra() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home" className="text-light">Home</Nav.Link>
-            <Nav.Link href="#link" className="text-light">Link</Nav.Link>
+            <Nav.Link href="#link" className="text-light">Fatture</Nav.Link>
+            <Link className="text-decoration-none" to="/login-page"><Nav.Link href="#link" className="text-light">Login</Nav.Link></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

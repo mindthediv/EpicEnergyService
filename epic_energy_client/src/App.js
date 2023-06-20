@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
@@ -26,6 +27,8 @@ function App() {
             <Route path="/login-page" element={<LoginPage />} />
             <Route path="/home" element={<Home />} />
           </Routes>
+          <Footer />
+
         </BrowserRouter>
       </div>
     );
