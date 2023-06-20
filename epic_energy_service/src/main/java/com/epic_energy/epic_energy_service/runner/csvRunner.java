@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -33,45 +32,43 @@ public class csvRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         List<List<String>> records = new ArrayList<>();
-        BufferedReader br = new BufferedReader(
-                new FileReader("C:\\Users\\Aless\\Desktop\\EpicEnergyService\\epic_energy_service\\src\\main\\resources/comuni-italiani.csv"));
-			String line;
-			while ((line = br.readLine()) != null) {
-			    String[] values = line.split(";");
-			     Municipality m = new Municipality();
-			     m.setName(values[2]);
-			     m.setProvince_name(provinceDAO.findByName(values[3]));
-			     m.setProvince_id(values[0]);
-			     m.setMunicipality_id(values[1]);
-			     municDAO.save(m);
-			    records.add(Arrays.asList(values));
-//			    log.info(values[0].toString() + " " + values[1].toString() + " "
-//			            + values[2].toString() + " ");
-			   
-			     }
-//			     List<List<String>> recordsProvince = new ArrayList<>();
-//			     BufferedReader brProvince = new BufferedReader(
-//			     new
-//			     FileReader("epic_energy_service\\src\\main\\resources\\province-italiane.csv"));
-//			     String lineProvince;
-//			     while ((lineProvince = brProvince.readLine()) != null) {
-//			     String[] values = lineProvince.split(";");
-//			     recordsProvince.add(Arrays.asList(values));
-//			     Province p = new Province();
-//			     p.setSign(values[0]);
-//			     p.setName(values[1]);
-//			     p.setRegion(values[2]);
-//			     System.out.println(p);
-//			     provinceService.saveProvince(p);
-//			     // log.info(values[0].toString() + " " + values[1].toString());
-//			     // records.forEach(el -> log.info(el.toString()));
-//			     }
-        
-			    throw new UnsupportedOperationException("Unimplemented method 'run'");
-        
-        
-    
-                
-                }
+        // BufferedReader br = new BufferedReader(
+                // new FileReader("/Users/sabrizaltni/Desktop/comuni-italiani//comuni-italiani.csv"));
+        // String line;
+        // while ((line = br.readLine()) != null) {
+        //     String[] values = line.split(";");
+        //     Municipality m = new Municipality();
+        //     m.setName(values[2]);
+        //     m.setProvince_id(values[0]);
+        //     m.setMunicipality_id(values[1]);
+        //     m.setProvince_name(provinceDAO.findByName(values[3]));
+
+        //     municDAO.save(m);
+        //     records.add(Arrays.asList(values));
+            // log.info(values[0].toString() + " " + values[1].toString() + " "
+            // + values[2].toString() + " ");
+
+        // }
+        // List<List<String>> recordsProvince = new ArrayList<>();
+        // BufferedReader brProvince = new BufferedReader(
+        // new
+        // FileReader("/Users/sabrizaltni/Desktop/comuni-italiani//province-italiane.csv"));
+        // String lineProvince;
+        // while ((lineProvince = brProvince.readLine()) != null) {
+        // String[] values = lineProvince.split(";");
+        // recordsProvince.add(Arrays.asList(values));
+        // Province p = new Province();
+        // p.setSign(values[0]);
+        // p.setName(values[1]);
+        // p.setRegion(values[2]);
+        // System.out.println(p);
+        // provinceService.saveProvince(p);
+        // // log.info(values[0].toString() + " " + values[1].toString());
+        // // records.forEach(el -> log.info(el.toString()));
+        // }
+
+         throw new UnsupportedOperationException("Unimplemented method 'run'");
+
+    }
 
 }
