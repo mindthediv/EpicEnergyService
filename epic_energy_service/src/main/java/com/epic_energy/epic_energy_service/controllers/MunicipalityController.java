@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.services.MunicipalityService;
 
 
@@ -27,7 +28,7 @@ public class MunicipalityController {
 	
 	@GetMapping
 	@PreAuthorize("isAuthenticate()")
-	public ResponseEntity<List<?>> getMunicipality(String municipality_id){
-		return ResponseEntity.ok(municipalityService.getAllMunicipalityByProvince(municipality_id));
+	public ResponseEntity<List<?>> getMunicipality(Province p){
+		return ResponseEntity.ok(municipalityService.getAllMunicipalityByProvince(p));
 	}
 }
