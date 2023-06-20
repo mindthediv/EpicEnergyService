@@ -4,6 +4,7 @@
 body {
   background-image: url(../src/img/index.jpeg);
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Playfair Display', serif;
 }
 

@@ -1,14 +1,11 @@
 import React from 'react';
-import Footer from './Footer';
 
-const App = () => {
+const Footer = () => {
   return (
-    <div>
-      <h1>Welcome to My Website</h1>
-      <p>This is the main content of the website.</p>
-      <Footer />
-    </div>
+    <footer>
+      <p>This is the footer of the website.</p>
+    </footer>
   );
 };
 
-export default App;
+export default Footer;
