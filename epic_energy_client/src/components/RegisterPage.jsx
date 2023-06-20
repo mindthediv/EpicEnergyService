@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../img/logonobg.png";
 
 function RegisterPage() {
   const [validated, setValidated] = useState(false);
@@ -15,40 +16,53 @@ function RegisterPage() {
   };
 
   return (
+    <div>
+      <Link to="/home">
+        <img
+          src={Logo}
+          width="70"
+          height="70"
+          className="d-inline align-top m-4"
+          alt="React Bootstrap logo"
+          style={{position:"fixed"}}
+        />
+        </Link>
     <div className="centered-container">
+      
       <form className="form " onSubmit={handleSubmit}>
-        <p className="title text-center fs-3">Register</p>
-        <p className="message">Signup now and get full access to our app.</p>
+        <p className="title text-center fs-3">Registrati</p>
+        <p className="message">Registrati e accedi a tutti gli utilizzi dell'app:</p>
         <div className="flex">
           <label>
             <input required placeholder="" type="text" className="input" />
-            <span>Firstname</span>
+            <span>Nome</span>
           </label>
           <label>
             <input required placeholder="" type="text" className="input" />
-            <span>Lastname</span>
+            <span>Cognome</span>
           </label>
         </div>
+        
           <label>
             <input required placeholder="" type="text" className="input" />
-            <span>Username</span>
+            <span>UserName</span>
           </label>
-        <label>
-          <input required placeholder="" type="email" className="input" />
+          <label>
+          <input required placeholder="" type="email" className="input mt-3" />
           <span>Email</span>
         </label>
-
         <label>
-          <input required placeholder="" type="password" className="input" />
+          <input required placeholder="" type="password" className="input mt-3" />
           <span>Password</span>
         </label>
-        <button className="submit mt-4">Submit</button>
+       
+        <button className="submit mt-4">Conferma</button>
         <p className="signin">
-          Already have an account? <Link to="/login-page">Sign in</Link>
+         Hai gia un account? <Link to="/login-page">Accedi</Link>
         </p>
       </form>
     </div>
-
+  </div>
   );
 }
 
