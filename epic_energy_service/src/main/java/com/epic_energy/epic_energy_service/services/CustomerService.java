@@ -9,6 +9,7 @@ import com.epic_energy.epic_energy_service.enumerated.ERole;
 import com.epic_energy.epic_energy_service.models.Customer;
 import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.repositories.CustomerRepository;
+import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
 import com.epic_energy.epic_energy_service.security.repository.RoleDAO;
 
 import jakarta.persistence.EntityExistsException;
@@ -19,7 +20,15 @@ public class CustomerService {
     private CustomerRepository customerRepository;
     @Autowired RoleDAO roleRepository;
 
-      public void saveCustomer(Customer c) {
+      public void saveCustomer(CustomerDto cdao) {
+        Customer c = new Customer();
+        c.setAddress(cdao.getAddress());
+        c.setCompanyName(cdao.getCompanyName());
+        c.setCustomerType(cdao.getCustomerType());
+        c.setEmail(cdao.getEmail());
+        c.setIva(cdao.getIva());
+        c.setPec(cdao.getPec());
+        c.setPhone(cdao.getPhone());
     	 c.setSubscriptionDate(LocalDate.now());
     	 c.getUser().getRoles().add(roleRepository.findByRoleName(ERole.ADMIN).get()); 
         customerRepository.save(c);

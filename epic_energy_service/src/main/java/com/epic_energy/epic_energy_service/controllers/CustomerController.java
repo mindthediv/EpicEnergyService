@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epic_energy.epic_energy_service.models.Customer;
+import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
 import com.epic_energy.epic_energy_service.services.CustomerService;
 
 @RestController
@@ -27,8 +28,9 @@ public class CustomerController {
 		return ResponseEntity.ok(customerService.getCustomer(id));
 	}
 	@PostMapping()
-	@PreAuthorize("isAuthenticated()")
-	public void createCustomer(@RequestBody Customer c) {
+	// @PreAuthorize("isAuthenticated()")
+	public void createCustomer(@RequestBody CustomerDto c) {
+		//service , da dto a entità
 		 customerService.saveCustomer(c);
 	}
 	

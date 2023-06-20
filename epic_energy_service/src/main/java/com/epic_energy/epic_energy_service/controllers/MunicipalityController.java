@@ -26,9 +26,9 @@ public class MunicipalityController {
 		return ResponseEntity.ok(municipalityService.getAllMunicipality());
 	}
 	
-	@GetMapping
-	@PreAuthorize("isAuthenticate()")
-	public ResponseEntity<List<?>> getMunicipality(Province p){
-		return ResponseEntity.ok(municipalityService.getAllMunicipalityByProvince(p));
-	}
+	//@GetMapping
+	//@PreAuthorize("isAuthenticate()")
+	//public ResponseEntity<List<?>> getMunicipality(Province p){
+	//	return ResponseEntity.ok(municipalityService.getAllMunicipalityByProvince(p));
+	//}
 }

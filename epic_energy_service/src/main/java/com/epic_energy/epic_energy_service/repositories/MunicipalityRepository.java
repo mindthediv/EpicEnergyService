@@ -13,5 +13,5 @@ import com.epic_energy.epic_energy_service.models.Province;
 public interface MunicipalityRepository extends JpaRepository<Municipality, Long> {
 
 	
-	public List<Municipality> findByProvincename(Province provincename);;
+	// public List<Municipality> findByProvincename(Province provincename);;
 }

@@ -35,12 +35,13 @@ public class Customer {
     String iva;
     @Column(nullable = false, unique = true)
     String email;
-    @Column(nullable = false,  name = "subscription_date")
+    @Column(nullable = true,  name = "subscription_date")
     //Queste date saranno fornite all'iscrizione e in automatico quando il customer effettua una fattura.
     LocalDate subscriptionDate;
-    @Column(name = "last_touch_date")
+    @Column(name = "last_touch_date", nullable = true)
     LocalDate lastTouchDate;
-    @Column(name = "year_sales")
+    //logica
+    @Column(name = "year_sales", nullable = true)
     int yearSales;
     @Column(nullable = false, unique = true)
     String pec; 
