@@ -28,8 +28,8 @@ public class CustomerController {
 	}
 	@PostMapping()
 	@PreAuthorize("isAuthenticated()")
-	public void createCustomer(Customer c) {
-		customerService.saveCustomer(c);
+	public void createCustomer(@RequestBody Customer c) {
+		 customerService.saveCustomer(c);
 	}
 	
 //	@PutMapping("/{id}") 
