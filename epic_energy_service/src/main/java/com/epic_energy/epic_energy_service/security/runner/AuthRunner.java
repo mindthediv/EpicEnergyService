@@ -1,9 +1,6 @@
 package com.epic_energy.epic_energy_service.security.runner;
 
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -38,7 +35,7 @@ public class AuthRunner implements ApplicationRunner {
 		System.out.println("Run...");
 		// Metodo da lanciare solo la prima volta
 		// Serve per salvare i ruoli nel DB
-		// setRoleDefault();
+		setRoleDefault();
 
 	}
 
