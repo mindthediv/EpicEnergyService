@@ -23,7 +23,7 @@ function LoginPage() {
       <div className="flex">
         <label>
           <input required placeholder="" type="text" className="input" />
-          <span>Usertname</span>
+          <span>Username</span>
         </label>
 
         <label>
@@ -33,7 +33,7 @@ function LoginPage() {
       </div>
       <button className="submit"><Link to="/home" className="text-decoration-none text-light">Login</Link></button>
       <p className="signin">
-        don't have an account? <Link to="/register-page">Signup</Link>
+        Don't have an account? <Link to="/register-page">Signup</Link>
       </p>
     </form>
     </div>
