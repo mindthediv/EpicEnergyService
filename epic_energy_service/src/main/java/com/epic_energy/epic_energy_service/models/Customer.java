@@ -38,14 +38,14 @@ public class Customer {
     @Column(nullable = false,  name = "subscription_date")
     //Queste date saranno fornite all'iscrizione e in automatico quando il customer effettua una fattura.
     LocalDate subscriptionDate;
-    @Column(nullable = false, name = "last_touch_date")
+    @Column(name = "last_touch_date")
     LocalDate lastTouchDate;
-    @Column(nullable = false, name = "year_sales")
+    @Column(name = "year_sales")
     int yearSales;
     @Column(nullable = false, unique = true)
     String pec; 
     @Column(nullable = false, unique = true)
-    int phone;
+    String phone;
     @Column(nullable = false, name = "customer_type")
     @Enumerated(EnumType.STRING)
     CustomerType customerType;

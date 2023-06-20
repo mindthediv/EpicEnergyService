@@ -34,5 +34,7 @@ public class MunicipalityService {
       public List<Municipality> getAllMunicipality() {
         return municipalityRepository.findAll();
     }
-
+      public List<Municipality> getAllMunicipalityByProvince(String province) {
+          return municipalityRepository.findByProvincenamesign(province);
+      }
 }
