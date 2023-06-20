@@ -6,7 +6,7 @@ import com.epic_energy.epic_energy_service.enumerated.CustomerType;
 
 public class Customer {
     //ragione sociale
-    String companyName; 
+    String companyName;
     String iva;
     String email;
     LocalDate subscriptionDate;
@@ -16,7 +16,7 @@ public class Customer {
     int phone;
     CustomerType customerType;
     // Da qui in poi direi di creare una classe User che sostituirà 'contact'
-    // i cui dati li  richiediamo in fase di iscrizione. I dati sopra saranno chiesti successivamente, 
+    // i cui dati li  richiediamo in fase di iscrizione. I dati sopra saranno chiesti successivamente,
     // quando lo User sarà nel db.
     String contactEmail;
     String contactName;
