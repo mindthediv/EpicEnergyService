@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
-      <p>This is the footer of the website.</p>
+    <footer style={{ textAlign: "center", padding: "10px", backgroundColor: "#f2f2f2" }}>
+      <p>&copy; {new Date().getFullYear()} Il tuo nome o nome dell'azienda. Tutti i diritti riservati.</p>
     </footer>
   );
 };

@@ -78,7 +78,8 @@ body {
 /* NAVBAR */
 
 .navbar {
-  box-shadow: 0px 4px 10px 5px rgb(69, 69, 69);
+  box-shadow: 0px 4px 10px 5px rgb(40, 40, 40);
+  backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.461) !important;
 
 }
