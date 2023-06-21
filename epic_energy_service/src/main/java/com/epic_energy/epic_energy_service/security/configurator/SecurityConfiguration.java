@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.epic_energy.epic_energy_service.enumerated.ERole;
 import com.epic_energy.epic_energy_service.security.security.JwtAuthenticationEntryPoint;
 import com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter;
 
@@ -53,7 +54,9 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers(HttpMethod.GET, "/api/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/customer").hasRole("ADMIN")
+                        .requestMatchers("/api/**").permitAll()
+                        .requestMatchers("/api/customer").hasRole("USER")
+                        .requestMatchers("/api/invoice/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint))
