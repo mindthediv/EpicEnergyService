@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.epic_energy.epic_energy_service.models.Address;
 import com.epic_energy.epic_energy_service.repositories.AddressRepository;
+import com.epic_energy.epic_energy_service.security.payload.AddressDTO;
 
 import jakarta.persistence.EntityExistsException;
 
@@ -16,7 +17,7 @@ public class AddressService {
       public Address saveAddress(Address c) {
         return addressRepository.save(c);
     }
-      public void updateAddress(long id) {
+      public void updateAddress(long id,Address a) {
         if(!addressRepository.existsById(id)){
           throw new EntityExistsException("Address do not exists");
         }
