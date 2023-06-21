@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 import com.epic_energy.epic_energy_service.models.User;
 
 @Repository
-public interface UtenteDAO extends JpaRepository<User, Integer> {
+public interface UtenteDAO extends JpaRepository<User, Long> {
 
-	public boolean existsById(Integer id);
+	public boolean existsById(Long id);
 
 	Optional<User> findByEmail(String email);
 

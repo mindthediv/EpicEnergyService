@@ -8,9 +8,12 @@ import org.springframework.stereotype.Service;
 import com.epic_energy.epic_energy_service.enumerated.ERole;
 import com.epic_energy.epic_energy_service.models.Customer;
 import com.epic_energy.epic_energy_service.models.Province;
+import com.epic_energy.epic_energy_service.models.Role;
+import com.epic_energy.epic_energy_service.models.User;
 import com.epic_energy.epic_energy_service.repositories.CustomerRepository;
 import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
 import com.epic_energy.epic_energy_service.security.repository.RoleDAO;
+import com.epic_energy.epic_energy_service.security.repository.UtenteDAO;
 
 import jakarta.persistence.EntityExistsException;
 
@@ -19,6 +22,8 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
     @Autowired RoleDAO roleRepository;
+    @Autowired UtenteDAO utenteDAO;
+    @Autowired UtenteService utenteService;
 
       public void saveCustomer(CustomerDto cdao) {
         Customer c = new Customer();
@@ -29,8 +34,12 @@ public class CustomerService {
         c.setIva(cdao.getIva());
         c.setPec(cdao.getPec());
         c.setPhone(cdao.getPhone());
-    	 c.setSubscriptionDate(LocalDate.now());
-    	 c.getUser().getRoles().add(roleRepository.findByRoleName(ERole.ROLE_ADMIN).get()); 
+    	  c.setSubscriptionDate(LocalDate.now());
+    	  // c.setUser(utenteDAO.findById(cdao.getUser_id()).get());
+        // Role admin = new Role();
+        // admin = roleRepository.findByRoleName(ERole.ROLE_ADMIN).get();
+        // c.getUser().getRoles().add(admin);
+        // utenteService.updateUtente(c.getUser().getId()); 
         customerRepository.save(c);
     }
       public Customer updateCustomer(long id,Customer c) {
