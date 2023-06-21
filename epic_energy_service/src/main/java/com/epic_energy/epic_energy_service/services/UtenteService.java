@@ -30,12 +30,5 @@ public class UtenteService {
     	}
     return	utenteDAO.findByUserName(username).get();
     }
-    
-    public User findByUsername(String username) {
-        if(!utenteDAO.existsByUserName(username)) {
-            throw new EntityExistsException("nessun username trovato");
-        }
-    return    utenteDAO.findByUserName(username).get();
-    }
 }
 
