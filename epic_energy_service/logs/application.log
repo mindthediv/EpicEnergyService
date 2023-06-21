@@ -3123,3 +3123,43 @@ Caused by: java.lang.IllegalArgumentException: Can't compare test expression of 
 18:29:15.711 [Thread-119] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 18:29:15.711 [Thread-119] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-30 - Shutdown initiated...
 18:29:15.712 [Thread-119] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-30 - Shutdown completed.
+18:29:15.759 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 16716 (C:\Users\Aless\Desktop\EpicEnergyService\epic_energy_service\target\classes started by Aless in C:\Users\Aless\Desktop\EpicEnergyService\epic_energy_service)
+18:29:15.760 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+18:29:15.870 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+18:29:15.885 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 7 JPA repository interfaces.
+18:29:15.946 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+18:29:15.946 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+18:29:15.946 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+18:29:15.959 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:29:15.959 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 198 ms
+18:29:15.988 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+18:29:15.992 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+18:29:15.992 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+18:29:15.993 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-31 - Starting...
+18:29:16.025 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-31 - Added connection org.postgresql.jdbc.PgConnection@18b89ddf
+18:29:16.025 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-31 - Start completed.
+18:29:16.029 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@4a0835f3
+18:29:16.040 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+18:29:16.072 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18:29:16.145 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+18:29:16.302 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+18:29:16.383 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3743f024, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70f2d906, org.springframework.security.web.context.SecurityContextHolderFilter@781938db, org.springframework.security.web.header.HeaderWriterFilter@4e9343bc, org.springframework.web.filter.CorsFilter@79dd777d, org.springframework.security.web.authentication.logout.LogoutFilter@35fe4113, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@3645ad85, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68eb1e99, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cb13e9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40acbd6f, org.springframework.security.web.session.SessionManagementFilter@68aa0679, org.springframework.security.web.access.ExceptionTranslationFilter@643e9b8a, org.springframework.security.web.access.intercept.AuthorizationFilter@30a12d24]
+18:29:16.436 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+18:29:16.443 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+18:29:16.445 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 0.698 seconds (process running for 14996.343)
+18:29:16.449 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+18:32:47.072 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+18:32:47.078 [Thread-123] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+18:32:47.079 [Thread-123] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-31 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+18:32:47.081 [Thread-123] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+18:32:47.081 [Thread-123] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-31 - Shutdown initiated...
+18:32:47.082 [Thread-123] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-31 - Shutdown completed.

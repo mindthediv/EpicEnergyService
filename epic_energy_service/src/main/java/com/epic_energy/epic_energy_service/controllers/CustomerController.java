@@ -38,11 +38,11 @@ public class CustomerController {
 		 customerService.saveCustomer(c);
 	}
 	
-	@PutMapping("/{id}") 
-	public ResponseEntity<?> updateCustomer(@PathVariable long id,@RequestBody Customer c){
-		
-		return ResponseEntity.ok(customerService.updateCustomer(id,c));
-	}
+//	@PutMapping("/{id}") 
+//	public ResponseEntity<?> updateCustomer(@PathVariable long id,@RequestBody CustomerDto c){
+//		
+//		return ResponseEntity.ok(customerService.updateCustomer(id,c));
+//	}
 	
 	
 	
