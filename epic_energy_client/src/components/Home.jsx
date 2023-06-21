@@ -120,32 +120,62 @@ function BasicExample() {
               >
                 <Form.Label>Inserisci i tuoi dati</Form.Label>
                 <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
+                  type="companyName"
+                  placeholder="companyName"
+                  autoFocus
+                  className="mt-3"
+                />
+                <Form.Control
+                  type="iva"
+                  placeholder="iva"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
                   type="email"
-                  placeholder="name@example.com"
+                  placeholder="email"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
+                  type="subscriptionDate"
+                  placeholder="subscriptionDate"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
+                  type="lastTouchDate"
+                  placeholder="lastTouchDate"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
-                  type="email"
-                  placeholder="name@example.com"
+                  type="yearSales"
+                  placeholder="yearSales"
+                  autoFocus
+                  className="mt-3"
+                />
+                <Form.Control
+                  type="pec"
+                  placeholder="pec"
+                  autoFocus
+                  className="mt-3"
+                />
+                <Form.Control
+                  type="phone"
+                  placeholder="phone"
+                  autoFocus
+                  className="mt-3"
+                />
+                <Form.Control
+                  type="address"
+                  placeholder="address"
+                  autoFocus
+                  className="mt-3"
+                />
+                <Form.Control
+                  type="user"
+                  placeholder="user"
                   autoFocus
                   className="mt-3"
                 />
