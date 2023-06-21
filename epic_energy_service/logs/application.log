@@ -1987,3 +1987,692 @@ Caused by: org.postgresql.util.PSQLException: ERROR: new row for relation "roles
 16:22:45.607 [http-nio-8080-exec-7] WARN  o.s.web.servlet.PageNotFound - Request method 'GET' is not supported
 16:22:45.615 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
 16:32:23.354 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Credenziali non valide]
+16:46:10.115 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+16:46:10.176 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:46:10.182 [Thread-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+16:46:10.204 [Thread-5] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+16:46:10.250 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:46:10.265 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:46:10.271 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:46:10.580 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:46:10.582 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:46:11.060 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:46:11.082 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 7 JPA repository interfaces.
+16:46:11.280 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:46:11.281 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:46:11.282 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:46:11.300 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:46:11.300 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 705 ms
+16:46:11.362 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:46:11.368 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:46:11.369 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:46:11.372 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+16:46:11.424 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@1dd101f7
+16:46:11.425 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+16:46:11.441 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@b59d2d
+16:46:11.482 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:46:11.681 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:46:11.860 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:46:12.152 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:46:12.254 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3e57802a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51d512c0, org.springframework.security.web.context.SecurityContextHolderFilter@481d2349, org.springframework.security.web.header.HeaderWriterFilter@626a15f9, org.springframework.web.filter.CorsFilter@6360b161, org.springframework.security.web.authentication.logout.LogoutFilter@63f52b8f, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@6bda0487, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@10f8cc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33f894c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b31d36, org.springframework.security.web.session.SessionManagementFilter@4a08c778, org.springframework.security.web.access.ExceptionTranslationFilter@4bf05575, org.springframework.security.web.access.intercept.AuthorizationFilter@4cd56c2f]
+16:46:12.357 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:46:12.373 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:46:12.380 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.889 seconds (process running for 3074.344)
+16:46:12.386 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:46:12.401 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:764) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:751) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: java.io.FileNotFoundException: epic_energy_service/src/main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method) ~[na:na]
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[na:na]
+	at java.base/java.io.FileReader.<init>(FileReader.java:60) ~[na:na]
+	at com.epic_energy.epic_energy_service.runner.csvRunner.run(csvRunner.java:30) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:761) ~[spring-boot-3.1.0.jar:3.1.0]
+	... 10 common frames omitted
+16:46:12.415 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:46:12.416 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+16:46:12.417 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+16:46:34.235 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:46:34.238 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:46:34.831 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:46:34.850 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 7 JPA repository interfaces.
+16:46:35.005 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:46:35.006 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:46:35.006 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:46:35.022 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:46:35.023 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 780 ms
+16:46:35.074 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:46:35.087 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:46:35.088 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:46:35.090 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+16:46:35.145 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@15122ede
+16:46:35.145 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+16:46:35.151 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@5fa3aae5
+16:46:35.199 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:46:35.397 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:46:35.491 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:46:35.853 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:46:36.041 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@94ddcc8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@696a3548, org.springframework.security.web.context.SecurityContextHolderFilter@4b440775, org.springframework.security.web.header.HeaderWriterFilter@420b96bf, org.springframework.web.filter.CorsFilter@6f9a4fe, org.springframework.security.web.authentication.logout.LogoutFilter@3cbb8f96, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@1758067, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67d9bee4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79f972ce, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30963a16, org.springframework.security.web.session.SessionManagementFilter@6af89018, org.springframework.security.web.access.ExceptionTranslationFilter@7e3a4178, org.springframework.security.web.access.intercept.AuthorizationFilter@24625760]
+16:46:36.171 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:46:36.204 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:46:36.211 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 2.029 seconds (process running for 3098.175)
+16:46:36.217 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+16:50:04.516 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+16:50:04.550 [Thread-7] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:50:04.563 [Thread-7] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-3 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+16:50:04.571 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:04.574 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+16:50:04.580 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+16:50:04.804 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:50:04.805 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:50:05.002 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:50:05.027 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 7 JPA repository interfaces.
+16:50:05.142 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:50:05.143 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:50:05.143 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:50:05.156 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:50:05.158 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 345 ms
+16:50:05.194 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:50:05.202 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:05.204 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:50:05.205 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+16:50:05.247 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@70a492f3
+16:50:05.248 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+16:50:05.268 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@7d32382a
+16:50:05.317 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:05.562 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:50:05.686 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:50:05.977 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:50:06.070 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ca9b032, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@519bd846, org.springframework.security.web.context.SecurityContextHolderFilter@5162837, org.springframework.security.web.header.HeaderWriterFilter@130aa1a2, org.springframework.web.filter.CorsFilter@5b121299, org.springframework.security.web.authentication.logout.LogoutFilter@1b53490f, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@50ffd40e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76407b74, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3001c3af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fb74df, org.springframework.security.web.session.SessionManagementFilter@4c6a6881, org.springframework.security.web.access.ExceptionTranslationFilter@5d55de07, org.springframework.security.web.access.intercept.AuthorizationFilter@7ac40efa]
+16:50:06.228 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:50:06.253 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:50:06.260 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.524 seconds (process running for 3308.227)
+16:50:06.263 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:50:06.270 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:764) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:751) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: java.io.FileNotFoundException: epic_energy_service/src/main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method) ~[na:na]
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[na:na]
+	at java.base/java.io.FileReader.<init>(FileReader.java:60) ~[na:na]
+	at com.epic_energy.epic_energy_service.runner.csvRunner.run(csvRunner.java:30) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:761) ~[spring-boot-3.1.0.jar:3.1.0]
+	... 10 common frames omitted
+16:50:06.288 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:06.289 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+16:50:06.292 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+16:50:14.966 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:50:14.969 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:50:15.176 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:50:15.202 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 7 JPA repository interfaces.
+16:50:15.361 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:50:15.367 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:50:15.368 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:50:15.392 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:50:15.393 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 417 ms
+16:50:15.438 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:50:15.447 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:15.448 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:50:15.450 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+16:50:15.495 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@228ca2e5
+16:50:15.495 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+16:50:15.499 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@ba3c438
+16:50:15.528 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:15.653 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:50:15.745 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:50:16.207 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+16:50:16.210 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:16.211 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+16:50:16.213 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+16:50:16.214 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:50:16.226 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:50:16.230 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1314) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1199) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:941) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The type csvRunner must implement the inherited abstract method ApplicationRunner.run(ApplicationArguments)
+	Syntax error on token "{", { expected after this token
+
+	at com.epic_energy.epic_energy_service.runner.csvRunner.<init>(csvRunner.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 24 common frames omitted
+16:50:22.850 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:50:22.851 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:50:23.004 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:50:23.024 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 7 JPA repository interfaces.
+16:50:23.125 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:50:23.134 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:50:23.135 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:50:23.208 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:50:23.212 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 354 ms
+16:50:23.306 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:50:23.314 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:23.315 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:50:23.316 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+16:50:23.362 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@3e96ca44
+16:50:23.363 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+16:50:23.366 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@13a8900
+16:50:23.401 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:23.509 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:50:23.607 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:50:23.830 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+16:50:23.833 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:23.834 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+16:50:23.837 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+16:50:23.838 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:50:23.860 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:50:23.863 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1314) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1199) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:941) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The type csvRunner must implement the inherited abstract method ApplicationRunner.run(ApplicationArguments)
+	Syntax error on token "}", delete this token
+
+	at com.epic_energy.epic_energy_service.runner.csvRunner.<init>(csvRunner.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 24 common frames omitted
+16:50:31.521 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:50:31.523 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:50:31.658 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:50:31.677 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 7 JPA repository interfaces.
+16:50:31.783 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:50:31.785 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:50:31.785 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:50:31.794 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:50:31.795 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 267 ms
+16:50:31.835 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:50:31.842 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:31.842 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:50:31.843 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+16:50:31.872 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@7f8ef956
+16:50:31.873 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+16:50:31.876 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@4f6ca0b0
+16:50:31.931 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:32.047 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:50:32.119 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:50:32.348 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:50:32.435 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a194833, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a3c4f12, org.springframework.security.web.context.SecurityContextHolderFilter@15c40d8, org.springframework.security.web.header.HeaderWriterFilter@51cf8c15, org.springframework.web.filter.CorsFilter@5536dca5, org.springframework.security.web.authentication.logout.LogoutFilter@6e8fd75d, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@548879b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a9015d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37929db3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a81db3c, org.springframework.security.web.session.SessionManagementFilter@309141eb, org.springframework.security.web.access.ExceptionTranslationFilter@2f869a31, org.springframework.security.web.access.intercept.AuthorizationFilter@577715fa]
+16:50:32.500 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:50:32.509 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:50:32.513 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.064 seconds (process running for 3334.48)
+16:50:32.514 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:50:32.516 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.Error: Unresolved compilation problem: 
+	The type csvRunner must implement the inherited abstract method ApplicationRunner.run(ApplicationArguments)
+
+	at com.epic_energy.epic_energy_service.runner.csvRunner.run(csvRunner.java:20) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:761) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:751) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+16:50:32.523 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:32.524 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+16:50:32.525 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+16:50:39.088 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:50:39.088 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:50:39.311 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:50:39.342 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 7 JPA repository interfaces.
+16:50:39.447 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:50:39.448 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:50:39.448 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:50:39.456 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:50:39.456 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 364 ms
+16:50:39.489 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:50:39.494 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:39.495 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:50:39.495 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+16:50:39.531 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@37ae047b
+16:50:39.532 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+16:50:39.535 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@4009fad4
+16:50:39.577 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:39.690 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:50:39.785 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:50:39.997 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:50:40.085 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@51ee7c10, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ee610dc, org.springframework.security.web.context.SecurityContextHolderFilter@7a9e42c4, org.springframework.security.web.header.HeaderWriterFilter@20a23861, org.springframework.web.filter.CorsFilter@1d8be013, org.springframework.security.web.authentication.logout.LogoutFilter@325db140, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@1a8fe3d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32609126, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@330c63b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b3adcb3, org.springframework.security.web.session.SessionManagementFilter@30213eae, org.springframework.security.web.access.ExceptionTranslationFilter@6d24a24b, org.springframework.security.web.access.intercept.AuthorizationFilter@106e039]
+16:50:40.149 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:50:40.158 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:50:40.162 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.112 seconds (process running for 3342.129)
+16:50:40.164 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+16:50:52.767 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+16:50:52.790 [Thread-15] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:50:52.804 [Thread-15] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-8 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+16:50:52.810 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:52.814 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+16:50:52.820 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+16:50:52.999 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:50:53.002 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:50:53.138 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:50:53.155 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 7 JPA repository interfaces.
+16:50:53.262 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:50:53.263 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:50:53.264 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:50:53.272 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:50:53.272 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 264 ms
+16:50:53.302 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:50:53.310 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:53.310 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:50:53.311 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+16:50:53.385 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@77e74137
+16:50:53.385 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+16:50:53.389 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@4de67fb4
+16:50:53.439 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:53.661 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:50:53.741 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:50:53.996 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+16:50:53.997 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:53.997 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+16:50:54.000 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+16:50:54.001 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:50:54.011 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:50:54.013 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1314) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1199) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:941) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The type csvRunner must implement the inherited abstract method ApplicationRunner.run(ApplicationArguments)
+	Syntax error on token "}", delete this token
+
+	at com.epic_energy.epic_energy_service.runner.csvRunner.<init>(csvRunner.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 24 common frames omitted
+16:50:55.519 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:50:55.519 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:50:55.627 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:50:55.642 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 7 JPA repository interfaces.
+16:50:55.979 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:50:55.984 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:50:55.984 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:50:55.994 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:50:55.994 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 471 ms
+16:50:56.033 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:50:56.040 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:56.041 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:50:56.041 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+16:50:56.073 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Added connection org.postgresql.jdbc.PgConnection@2c82ccb1
+16:50:56.074 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+16:50:56.077 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@36cfec9a
+16:50:56.126 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:50:56.217 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:50:56.291 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:50:56.502 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+16:50:56.502 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:50:56.502 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+16:50:56.505 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+16:50:56.505 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:50:56.510 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:50:56.512 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1314) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1199) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:941) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The type csvRunner must implement the inherited abstract method ApplicationRunner.run(ApplicationArguments)
+	Syntax error on token "{", { expected after this token
+
+	at com.epic_energy.epic_energy_service.runner.csvRunner.<init>(csvRunner.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 24 common frames omitted
+16:51:11.225 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:51:11.226 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:51:11.362 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:51:11.377 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 7 JPA repository interfaces.
+16:51:11.462 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:51:11.462 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:51:11.463 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:51:11.470 [restartedMain] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:51:11.470 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 239 ms
+16:51:11.498 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:51:11.509 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:51:11.509 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:51:11.510 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+16:51:11.537 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Added connection org.postgresql.jdbc.PgConnection@1aa92fa5
+16:51:11.537 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+16:51:11.540 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@26dfd464
+16:51:11.565 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:51:11.788 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:51:11.892 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:51:12.166 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:51:12.268 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@fa290c1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56e24ea, org.springframework.security.web.context.SecurityContextHolderFilter@7b700e58, org.springframework.security.web.header.HeaderWriterFilter@54fac297, org.springframework.web.filter.CorsFilter@4f108ed, org.springframework.security.web.authentication.logout.LogoutFilter@56db83bc, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@1e2ad686, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1de326c1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1f0fb190, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6aa73a91, org.springframework.security.web.session.SessionManagementFilter@b272718, org.springframework.security.web.access.ExceptionTranslationFilter@4124fa25, org.springframework.security.web.access.intercept.AuthorizationFilter@30ebca68]
+16:51:12.341 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:51:12.350 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:51:12.354 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.183 seconds (process running for 3374.321)
+16:51:12.355 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:51:12.356 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:764) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:751) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: java.io.FileNotFoundException: epic_energy_service/src/main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method) ~[na:na]
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[na:na]
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[na:na]
+	at java.base/java.io.FileReader.<init>(FileReader.java:60) ~[na:na]
+	at com.epic_energy.epic_energy_service.runner.csvRunner.run(csvRunner.java:30) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:761) ~[spring-boot-3.1.0.jar:3.1.0]
+	... 10 common frames omitted
+16:51:12.377 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:51:12.377 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+16:51:12.378 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+16:51:18.921 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:51:18.922 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:51:19.026 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:51:19.039 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 7 JPA repository interfaces.
+16:51:19.106 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:51:19.106 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:51:19.106 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:51:19.119 [restartedMain] INFO  o.a.c.c.C.[Tomcat-4].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:51:19.119 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 194 ms
+16:51:19.243 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:51:19.256 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:51:19.256 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:51:19.258 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+16:51:19.302 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-12 - Added connection org.postgresql.jdbc.PgConnection@2e0adfc9
+16:51:19.303 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+16:51:19.306 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@7f94fd12
+16:51:19.352 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:51:19.453 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:51:19.533 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:51:19.751 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+16:51:19.752 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:51:19.752 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+16:51:19.754 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+16:51:19.756 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:51:19.761 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:51:19.763 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'csvRunner' defined in file [/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes/com/epic_energy/epic_energy_service/runner/csvRunner.class]: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1314) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1199) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:941) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.9.jar:6.0.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.epic_energy.epic_energy_service.runner.csvRunner]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-6.0.9.jar:6.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1308) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "}", { expected after this token
+
+	at com.epic_energy.epic_energy_service.runner.csvRunner.<init>(csvRunner.java:58) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-6.0.9.jar:6.0.9]
+	... 24 common frames omitted
+16:51:28.360 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 94062 (/Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service/target/classes started by sabrizaltni in /Users/sabrizaltni/Desktop/bw5/EpicEnergyService/EpicEnergyService/epic_energy_service)
+16:51:28.361 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:51:28.486 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:51:28.503 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 7 JPA repository interfaces.
+16:51:28.646 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:51:28.647 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:51:28.647 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:51:28.657 [restartedMain] INFO  o.a.c.c.C.[Tomcat-5].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:51:28.657 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 292 ms
+16:51:28.704 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:51:28.710 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:51:28.710 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:51:28.711 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+16:51:28.733 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-13 - Added connection org.postgresql.jdbc.PgConnection@15698012
+16:51:28.733 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+16:51:28.736 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@b867420
+16:51:28.769 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:51:28.981 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:51:29.092 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:51:29.434 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:51:29.540 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@65ff6b16, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c4e67e0, org.springframework.security.web.context.SecurityContextHolderFilter@54df4a96, org.springframework.security.web.header.HeaderWriterFilter@569ab89, org.springframework.web.filter.CorsFilter@19662f92, org.springframework.security.web.authentication.logout.LogoutFilter@3fc8d011, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@668fb550, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5470d6fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c0d0a1f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@254c5e01, org.springframework.security.web.session.SessionManagementFilter@1119f99, org.springframework.security.web.access.ExceptionTranslationFilter@2aa5515f, org.springframework.security.web.access.intercept.AuthorizationFilter@19f4ac4b]
+16:51:29.677 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:51:29.705 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:51:29.716 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 1.412 seconds (process running for 3391.683)
+16:51:29.721 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+16:51:29.724 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:764) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:751) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305) ~[spring-boot-3.1.0.jar:3.1.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294) ~[spring-boot-3.1.0.jar:3.1.0]
+	at com.epic_energy.epic_energy_service.EpicEnergyServiceApplication.main(EpicEnergyServiceApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.1.0.jar:3.1.0]
+Caused by: java.lang.UnsupportedOperationException: Unimplemented method 'run'
+	at com.epic_energy.epic_energy_service.runner.csvRunner.run(csvRunner.java:60) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:761) ~[spring-boot-3.1.0.jar:3.1.0]
+	... 10 common frames omitted
+16:51:29.736 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:51:29.737 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown initiated...
+16:51:29.739 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown completed.

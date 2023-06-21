@@ -169,13 +169,13 @@ function BasicExample() {
                 />
                 <Form.Control
                   type="address"
-                  placeholder="address"
+                  placeholder="name@example.com"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
                   type="user"
-                  placeholder="user"
+                  placeholder="name@example.com"
                   autoFocus
                   className="mt-3"
                 />
