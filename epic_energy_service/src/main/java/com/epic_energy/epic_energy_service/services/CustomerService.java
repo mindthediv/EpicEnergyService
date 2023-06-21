@@ -30,7 +30,7 @@ public class CustomerService {
         c.setPec(cdao.getPec());
         c.setPhone(cdao.getPhone());
     	 c.setSubscriptionDate(LocalDate.now());
-    	 c.getUser().getRoles().add(roleRepository.findByRoleName(ERole.ADMIN).get()); 
+    	 c.getUser().getRoles().add(roleRepository.findByRoleName(ERole.ROLE_ADMIN).get()); 
         customerRepository.save(c);
     }
       public Customer updateCustomer(long id,Customer c) {

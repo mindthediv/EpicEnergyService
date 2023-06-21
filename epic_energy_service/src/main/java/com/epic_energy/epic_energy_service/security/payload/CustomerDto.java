@@ -20,6 +20,7 @@ public class CustomerDto {
     String phone;
     CustomerType customerType;
     Address address;
+    String provinceSign;
 
     @Override
     public String toString() {

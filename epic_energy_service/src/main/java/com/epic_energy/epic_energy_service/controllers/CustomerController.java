@@ -28,7 +28,7 @@ public class CustomerController {
 		return ResponseEntity.ok(customerService.getCustomer(id));
 	}
 	@PostMapping()
-	// @PreAuthorize("isAuthenticated()")
+	@PreAuthorize("USER")
 	public void createCustomer(@RequestBody CustomerDto c) {
 		//service , da dto a entità
 		 customerService.saveCustomer(c);
