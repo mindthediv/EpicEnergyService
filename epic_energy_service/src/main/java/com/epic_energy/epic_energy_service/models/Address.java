@@ -27,12 +27,12 @@ public class Address {
     @Column(nullable = false)
     String street;
     @Column(nullable = false, name = "house_number")
-    int houseNumber;
+    String houseNumber;
     // 'località'
     @Column(nullable = false)
     String country;
     @Column(nullable = false)
-    int cap;
+    String cap;
     @OneToOne(fetch = FetchType.EAGER)
     Municipality municipality;
 }
