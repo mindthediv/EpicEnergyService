@@ -12,6 +12,7 @@ import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.models.Role;
 import com.epic_energy.epic_energy_service.models.User;
 import com.epic_energy.epic_energy_service.repositories.CustomerRepository;
+import com.epic_energy.epic_energy_service.security.payload.AddressDTO;
 import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
 import com.epic_energy.epic_energy_service.security.repository.RoleDAO;
 import com.epic_energy.epic_energy_service.security.repository.UtenteDAO;
@@ -28,14 +29,19 @@ public class CustomerService {
   UtenteDAO utenteDAO;
   @Autowired
   UtenteService utenteService;
+  @Autowired AddressService addressService;
+  @Autowired MunicipalityService municipalityService;
 
-  public void saveCustomer(CustomerDto cdao) {
-    Address a = new Address();
-    a.setCap(cdao.getAddress().getCap());
-    a.setCountry(cdao.getAddress().getCountry());
-    a.setStreet(cdao.getAddress().getStreet());
-    a.setHouseNumber(cdao.getAddress().getHouseNumber());
-    a.setMunicipality(municipalityService.getMunicipality(cdao.getMunicipality()));
+  public Customer saveCustomer(CustomerDto cdao) {
+    
+	  
+	  
+	  Address a = new Address();
+    a.setCap(cdao.getAddressDTO().getCap());
+    a.setCountry(cdao.getAddressDTO().getCountry());
+    a.setStreet(cdao.getAddressDTO().getStreet());
+    a.setHouseNumber(cdao.getAddressDTO().getHouseNumber());
+    a.setMunicipality(municipalityService.getMunicipality(cdao.getAddressDTO().getMunicipality_id()));
     Address save = addressService.saveAddress(a);
 
     Customer c = new Customer();
@@ -47,12 +53,12 @@ public class CustomerService {
     c.setPec(cdao.getPec());
     c.setPhone(cdao.getPhone());
     c.setSubscriptionDate(LocalDate.now());
-    // c.setUser(utenteDAO.findById(cdao.getUser_id()).get());
+    c.setUser(utenteDAO.findById(cdao.getUser_id()).get());
     // Role admin = new Role();
     // admin = roleRepository.findByRoleName(ERole.ROLE_ADMIN).get();
     // c.getUser().getRoles().add(admin);
     // utenteService.updateUtente(c.getUser().getId());
-    customerRepository.save(c);
+  return  customerRepository.save(c);
   }
 
   public Customer updateCustomer(long id, Customer c) {
