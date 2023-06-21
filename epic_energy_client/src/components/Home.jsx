@@ -138,20 +138,8 @@ function BasicExample() {
                   className="mt-3"
                 />
                 <Form.Control
-                  type="subscriptionDate"
-                  placeholder="subscriptionDate"
-                  autoFocus
-                  className="mt-3"
-                />
-                <Form.Control
-                  type="lastTouchDate"
-                  placeholder="lastTouchDate"
-                  autoFocus
-                  className="mt-3"
-                />
-                <Form.Control
-                  type="yearSales"
-                  placeholder="yearSales"
+                  type="number"
+                  placeholder="email"
                   autoFocus
                   className="mt-3"
                 />

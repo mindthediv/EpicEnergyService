@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.epic_energy.epic_energy_service.models.User;
 import com.epic_energy.epic_energy_service.security.repository.UtenteDAO;
 
+import jakarta.persistence.EntityExistsException;
+
 @Service
 public class UtenteService {
     @Autowired UtenteDAO utenteDAO;
@@ -15,4 +17,12 @@ public class UtenteService {
         utenteDAO.saveAndFlush(u);
         return u.toString();
     }
+    
+    public User findByUsername(String username) {
+        if(!utenteDAO.existsByUserName(username)) {
+            throw new EntityExistsException("nessun username trovato");
+        }
+    return    utenteDAO.findByUserName(username).get();
+    }
 }
+

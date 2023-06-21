@@ -8,12 +8,11 @@ function LoginPage() {
     password: "",
   });
   const [loginSuccess, setLoginSuccess] = useState(false);
-   // Add state for login success
 
   const handleChange = (event) => {
     setFormData({
       ...formData,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -24,15 +23,15 @@ function LoginPage() {
       const response = await fetch("http://localhost:8080/api/auth/login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         let data = await response.json();
         console.log("Login successful" + data.accessToken);
-        setLoginSuccess(true); 
+        setLoginSuccess(true);
       } else {
         console.log("Login failed");
       }
@@ -84,7 +83,9 @@ function LoginPage() {
             </label>
           </div>
           <button type="submit" className="submit">
-            Login
+            <Link to="/home" className="text-light text-decoration-none">
+              Login
+            </Link>
           </button>
           <p className="signin">
             Non hai un account? <Link to="/register-page">Registrati</Link>

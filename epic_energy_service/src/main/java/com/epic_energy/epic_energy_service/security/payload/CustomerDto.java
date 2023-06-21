@@ -19,7 +19,7 @@ public class CustomerDto {
     String pec;
     String phone;
     CustomerType customerType;
-    Address address;
+    AddressDTO address;
     long user_id;
 
     @Override
