@@ -7,6 +7,6 @@ import com.epic_energy.epic_energy_service.models.Customer;
 import com.epic_energy.epic_energy_service.models.Municipality;
 
 @Repository
-public interface CustomerRepository  extends JpaRepository<Customer, Long> {
+public interface CustomerRepository  extends JpaRepository<Customer, String> {
     
 }

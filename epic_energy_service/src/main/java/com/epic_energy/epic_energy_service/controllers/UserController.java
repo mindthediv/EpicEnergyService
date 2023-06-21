@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.epic_energy.epic_energy_service.models.User;
 import com.epic_energy.epic_energy_service.security.payload.RegisterDto;
 import com.epic_energy.epic_energy_service.security.payload.UtenteDTO;
 import com.epic_energy.epic_energy_service.services.UtenteService;
@@ -27,9 +28,15 @@ public class UserController {
 		return ResponseEntity.ok(utenteService.findByUsername(username));
 	}
 	
-//	@PutMapping("/{id}")
-//	@PreAuthorize("hasRole('USER')")
-//	public ResponseEntity<?> modifyUser(@PathVariable Long id, @RequestBody UtenteDTO user){
-//		return utenteService.updateUtente(id,user);
-//	}
+	@GetMapping("/{id}")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> getById(@PathVariable Long id){
+		return ResponseEntity.ok(utenteService.findUserById(id));
+	}
+	
+	@PutMapping("/{id}")
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> modifyUser(@PathVariable Long id, @RequestBody UtenteDTO user){
+		return ResponseEntity.ok(utenteService.updateUtente(id,user));
+	}
 }
