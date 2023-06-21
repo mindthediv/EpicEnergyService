@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -11,10 +11,117 @@ import NavBar from "./NavBar";
 
 function BasicExample() {
   const [show, setShow] = useState(false);
+  const token = window.localStorage.getItem("token");
 
+  const [province, setProvince] = useState(null);
+  const [municipality, setMunicipality] = useState(null);
+  const [selectedProvince, setSelectedProvince] = useState(null);
+
+  //mostra/nascondi modale
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = function () {
+    // fetch("http://localhost:8080/api/auth/province/all", {
+    //   headers: {
+    //     Authentication: "Bearer" + token,
+    //   },
+    // })
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error("Network response was not ok");
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log("Received data:", data);
+    //     setProvince(data);
+    //     console.log(province)
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //     // Handle any errors that occurred during the request
+    //   });
 
+    setShow(true);
+  };
+  //indirizzo dal modale
+  const [formCustomer, setCustomer] = useState({
+    companyName: "",
+    iva: "",
+    email: "",
+    pec: "",
+    phone: "",
+    customerType: "", //dropdown SPA ecc
+    user_id: "",
+    address: {
+      street: "", //a mano
+      houseNumber: "", //a mano
+      country: "",
+      cap: "",
+      municipality_id: "", // dropdown
+    },
+  });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    handleClose();
+  };
+  const handleProvinceChange = (event) => {
+    setSelectedProvince(event.target.value)
+    console.log(selectedProvince);
+    handleMunicipality(selectedProvince);
+    // Call handleMunicipality or perform any other necessary operations based on the selected province
+  };
+  const handleChange = (event) => {
+    setCustomer({
+      ...formCustomer,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handleMunicipality = function (p) {
+    // const provincia = p.target.value;
+    // console.log(provincia)
+    fetch("http://localhost:8080/api/municipality", {
+      headers: {
+        Authentication: "Bearer" + token,
+      },
+      body: JSON.stringify(p)
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((municipality) => {
+        setMunicipality(municipality); // Update the state with the fetched data
+        console.log(municipality);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle any errors that occurred during the request
+      });
+  };
+  useEffect(() => {
+    fetch("http://localhost:8080/api/auth/province/all", {
+      headers: {
+        Authentication: "Bearer" + token,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((province) => {
+        setProvince(province); // Update the state with the fetched data
+        console.log(province);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle any errors that occurred during the request
+      });
+  }, []); // Empty dependency array to ensure the effect runs only once
   return (
     <>
       <NavBar></NavBar>
@@ -121,57 +228,96 @@ function BasicExample() {
                 <Form.Label>Inserisci i tuoi dati</Form.Label>
                 <Form.Control
                   type="companyName"
-                  placeholder="companyName"
+                  placeholder="Nome Azienda"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
                   type="iva"
-                  placeholder="iva"
+                  placeholder="Iva"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
                   type="email"
-                  placeholder="email"
-                  autoFocus
-                  className="mt-3"
-                />
-                <Form.Control
-                  type="number"
-                  placeholder="email"
+                  placeholder="Email"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
                   type="pec"
-                  placeholder="pec"
+                  placeholder="Pec"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
-                  type="phone"
-                  placeholder="phone"
+                  type="number"
+                  placeholder="Telefono"
                   autoFocus
                   className="mt-3"
                 />
                 <Form.Control
-                  type="address"
-                  placeholder="name@example.com"
+                  as="select"
+                  type="customerType"
+                  placeholder="Tipo Cliente"
                   autoFocus
+                  className="mt-3"
+                >
+                  <option value="PA">PA</option>
+                  <option value="SAS">SAS</option>
+                  <option value="SPA">SPA</option>
+                  <option value="SRL">SRL</option>
+                </Form.Control>
+                <Form.Label className="mt-3">Indirizzo</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Via"
+                  name="street"
                   className="mt-3"
                 />
                 <Form.Control
-                  type="user"
-                  placeholder="name@example.com"
-                  autoFocus
+                  type="text"
+                  placeholder="Numero civico"
+                  name="houseNumber"
                   className="mt-3"
                 />
+                <Form.Control
+                  type="text"
+                  placeholder="Paese"
+                  name="country"
+                  className="mt-3"
+                />
+                <Form.Control
+                  type="text"
+                  placeholder="CAP"
+                  name="cap"
+                  className="mt-3"
+                />
+                <Form.Control as="select" className="mt-3" name="province" onChange={handleProvinceChange}>
+                  <option value="">Seleziona provincia:</option>
+                  {province != null ? (
+                    province.map((p) => (
+                      <option value={p}>{p.sign}</option>
+                    ))
+                  ) : (
+                    <option>1</option>
+                  )}
+                </Form.Control>
+                <Form.Control as="select" className="mt-3" name="municipality">
+                  <option value="">Seleziona un comune:</option>
+                  {municipality != null ? (
+                    municipality.map((m) => (
+                      <option value={m.id}>{m.name}</option>
+                    ))
+                  ) : (
+                    <option>1</option>
+                  )}
+                </Form.Control>
               </Form.Group>
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={handleClose}>
+            <Button type="submit" variant="primary" onClick={handleSubmit}>
               Invia i dati
             </Button>
           </Modal.Footer>

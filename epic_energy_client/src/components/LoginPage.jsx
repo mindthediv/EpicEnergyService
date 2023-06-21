@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../img/logonobg.png";
 
 function LoginPage() {
+
   const [formData, setFormData] = useState({
     userName: "",
     password: "",
@@ -31,6 +32,7 @@ function LoginPage() {
       if (response.ok) {
         let data = await response.json();
         console.log("Login successful" + data.accessToken);
+        window.localStorage.setItem("token", data.accessToken);
         setLoginSuccess(true);
       } else {
         console.log("Login failed");
