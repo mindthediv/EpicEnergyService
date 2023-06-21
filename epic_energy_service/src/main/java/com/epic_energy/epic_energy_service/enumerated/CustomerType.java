@@ -2,8 +2,8 @@ package com.epic_energy.epic_energy_service.enumerated;
 
 
 public enum CustomerType {
-    PA,
+	PA,
     SAS,
     SPA,
-    SRL
+    SRL 
 }

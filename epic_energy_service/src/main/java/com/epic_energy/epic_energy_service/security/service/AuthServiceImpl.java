@@ -76,6 +76,7 @@ public class AuthServiceImpl implements AuthService {
         user.setCognome(registerDto.getCognome());
         user.setUserName(registerDto.getUserName());
         user.setEmail(registerDto.getEmail());
+        user.setContactPhone((registerDto.getContactPhone()));
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
 
         Set<Role> roles = new HashSet<>();
@@ -86,7 +87,7 @@ public class AuthServiceImpl implements AuthService {
                 roles.add(userRole);
             });
         } else {
-            Role userRole = roleRepository.findByRoleName(ERole.USER).get();
+            Role userRole = roleRepository.findByRoleName(ERole.ROLE_USER).get();
             roles.add(userRole);
         }
 
@@ -99,11 +100,11 @@ public class AuthServiceImpl implements AuthService {
 
     public ERole getRole(String role) {
         if (role.equals("ADMIN")) {
-            return ERole.ADMIN;
+            return ERole.ROLE_ADMIN;
         }
 
         else
-            return ERole.USER;
+            return ERole.ROLE_USER;
     }
 
 }

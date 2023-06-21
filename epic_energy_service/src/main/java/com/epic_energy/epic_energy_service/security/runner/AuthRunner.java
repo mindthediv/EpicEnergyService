@@ -35,17 +35,17 @@ public class AuthRunner implements ApplicationRunner {
 		System.out.println("Run...");
 		// Metodo da lanciare solo la prima volta
 		// Serve per salvare i ruoli nel DB
-		setRoleDefault();
+//		 setRoleDefault();
 
 	}
 
 	private void setRoleDefault() {
 		Role admin = new Role();
-		admin.setRoleName(ERole.ADMIN);
+		admin.setRoleName(ERole.ROLE_ADMIN);
 		roleRepository.save(admin);
 
 		Role user = new Role();
-		user.setRoleName(ERole.USER);
+		user.setRoleName(ERole.ROLE_USER);
 		roleRepository.save(user);
 
 		// adminRole = new HashSet<Role>();
