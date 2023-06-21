@@ -4,8 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.epic_energy.epic_energy_service.models.Municipality;
-import java.util.List;
 import com.epic_energy.epic_energy_service.models.Province;
+
+import java.util.List;
+
 
 
 
@@ -13,5 +15,5 @@ import com.epic_energy.epic_energy_service.models.Province;
 public interface MunicipalityRepository extends JpaRepository<Municipality, Long> {
 
 	
-	// public List<Municipality> findByProvincename(Province provincename);;
+	 public List<Municipality> findByProvincename(Province provincename);;
 }

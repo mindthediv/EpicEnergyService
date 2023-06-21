@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,15 +21,15 @@ public class MunicipalityController {
 
 	@Autowired MunicipalityService municipalityService;
 	
-	@GetMapping
-	@PreAuthorize("isAuthenticate()")
-	public ResponseEntity<?> getAllMunicipality(){
-		return ResponseEntity.ok(municipalityService.getAllMunicipality());
-	}
+//	@GetMapping
+////	@PreAuthorize("isAuthenticate()")
+//	public ResponseEntity<List<?>> getAllMunicipality(){
+//		return ResponseEntity.ok(municipalityService.getAllMunicipality());
+//	}
 	
-	//@GetMapping
-	//@PreAuthorize("isAuthenticate()")
-	//public ResponseEntity<List<?>> getMunicipality(Province p){
-	//	return ResponseEntity.ok(municipalityService.getAllMunicipalityByProvince(p));
-	//}
+	@GetMapping
+//	@PreAuthorize("isAuthenticate()")
+	public ResponseEntity<List<?>> getMunicipality(@RequestBody Province p){
+		return ResponseEntity.ok(municipalityService.getAllMunicipalityByProvince(p));
+	}
 }

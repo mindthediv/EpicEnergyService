@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.epic_energy.epic_energy_service.enumerated.ERole;
+import com.epic_energy.epic_energy_service.models.Address;
 import com.epic_energy.epic_energy_service.models.Customer;
 import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.repositories.CustomerRepository;
@@ -19,10 +20,20 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
     @Autowired RoleDAO roleRepository;
+    @Autowired AddressService addressService;
+    @Autowired MunicipalityService municipalityService;
 
       public void saveCustomer(CustomerDto cdao) {
-        Customer c = new Customer();
-        c.setAddress(cdao.getAddress());
+    	 Address a = new Address();
+    	 a.setCap(cdao.getAddress().getCap());
+    	 a.setCountry(cdao.getAddress().getCountry());
+    	 a.setStreet(cdao.getAddress().getStreet());
+    	 a.setHouseNumber(cdao.getAddress().getHouseNumber());
+    	 a.setMunicipality(municipalityService.getMunicipality(cdao.getMunicipality()));
+    	Address save = addressService.saveAddress(a);
+    	
+    	Customer c = new Customer();
+        c.setAddress(save);
         c.setCompanyName(cdao.getCompanyName());
         c.setCustomerType(cdao.getCustomerType());
         c.setEmail(cdao.getEmail());

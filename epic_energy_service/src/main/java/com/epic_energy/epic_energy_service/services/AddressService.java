@@ -13,8 +13,8 @@ public class AddressService {
       @Autowired
     private AddressRepository addressRepository;
 
-      public void saveAddress(Address c) {
-        addressRepository.save(c);
+      public Address saveAddress(Address c) {
+        return addressRepository.save(c);
     }
       public void updateAddress(long id) {
         if(!addressRepository.existsById(id)){
