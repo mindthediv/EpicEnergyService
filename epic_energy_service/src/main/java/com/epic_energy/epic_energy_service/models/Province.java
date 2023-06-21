@@ -15,8 +15,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "provinces")
-
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
