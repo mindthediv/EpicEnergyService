@@ -55,6 +55,10 @@ function RegisterPage() {
           <input required placeholder="" type="password" className="input mt-3" />
           <span>Password</span>
         </label>
+        <label>
+          <input required placeholder="" type="text" className="input mt-3" />
+          <span>Telefono</span>
+        </label>
        
         <button className="submit mt-4">Conferma</button>
         <p className="signin">

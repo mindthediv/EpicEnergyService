@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Fatture from "./components/Fatture";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import LoginPage from "./components/LoginPage";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/register-page" element={<RegisterPage />} />
             <Route path="/login-page" element={<LoginPage />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/fatture" element={<Fatture />} />
           </Routes>
           <Footer />
 
@@ -35,4 +37,3 @@ function App() {
   }
   
   export default App;
-  

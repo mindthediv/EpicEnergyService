@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
   background-image: url(../src/img/index.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: 'Playfair Display', serif;
+  background-size: 102%;
+  background-attachment: fixed;
+  font-family: 'Playfair Display', serif !important;
 }
+
 
 /* LOGIN & REGISTER PAGE */
 .centered-container {
@@ -78,10 +78,13 @@ body {
 /* NAVBAR */
 
 .navbar {
-  box-shadow: 0px 4px 10px 5px rgb(40, 40, 40);
+  box-shadow: 0px 3px 8px 5px rgb(0, 0, 0);
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.461) !important;
 
+}
+.footer {
+  backdrop-filter: blur(10px);
 }
 
 /* JUMBOTRON */
@@ -89,26 +92,81 @@ body {
   margin-top: 5em;
   height: 15em;
   background-color: #80808056;
+  backdrop-filter: blur(10px);
   box-shadow: 0px 0px 7px 0px rgb(109, 109, 109);
 }
+
 .mini-jumbotron {
   height: 100%;
   width: 65%;
   margin-top: 5em;
 }
+
 .mini-jumbotron h1 {
-font-size:3.5em;
+  font-size: 3.5em;
 }
+
 .article {
   margin-top: 5em;
   height: 18em;
-  width: 62%;
+  width: 70%;
   background-color: #80808056;
   box-shadow: 0px 4px 10px 5px rgb(69, 69, 69);
+  backdrop-filter: blur(10px);
+}
+
+.article2 {
+  margin-top: 5em;
+  height: 21em;
+  width: 70%;
+  background-color: #80808056;
+  box-shadow: 0px 4px 10px 5px rgb(69, 69, 69);
+  backdrop-filter: blur(10px);
+  margin-bottom: 5em !important;
 }
 
 .columns {
   columns: auto 12rem;
   column-rule: dotted 2px white;
   column-gap: 100px;
+}
+
+.button-article {
+  width: 95%;
+  background: rgba(0, 0, 0, 0.461) !important;
+  border: none !important;
+
+}
+
+.canvas {
+  background: rgba(0, 0, 0, 0.461) !important;
+  backdrop-filter: blur(10px);
+  color: white !important;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 420px) {
+  .immagini {
+    display: none;
+  }
+
+  .article2 {
+    display: none;
+  }
+
+  body {
+    width: 100%;
+  }
+
+
+  .footer {
+    /* position: fixed;
+    bottom: 0; */
+  }
+
+  .immagine-home {
+    width: 100% !important;
+    height: 50%;
+  }
+
 }
