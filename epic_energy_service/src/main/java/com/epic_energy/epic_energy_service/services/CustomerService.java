@@ -29,19 +29,19 @@ public class CustomerService {
   UtenteDAO utenteDAO;
   @Autowired
   UtenteService utenteService;
+  @Autowired AddressService addressService;
+  @Autowired MunicipalityService municipalityService;
 
-  @Autowired
-  AddressService addressService;
-  @Autowired
-  MunicipalityService municipalityService;
-
-  public void saveCustomer(CustomerDto cdao) {
-    Address a = new Address();
-    a.setCap(cdao.getAddress().getCap());
-    a.setCountry(cdao.getAddress().getCountry());
-    a.setStreet(cdao.getAddress().getStreet());
-    a.setHouseNumber(cdao.getAddress().getHouseNumber());
-    a.setMunicipality(municipalityService.getMunicipality(cdao.getAddress().getMunicipality_id()));
+  public Customer saveCustomer(CustomerDto cdao) {
+    
+	  
+	  
+	  Address a = new Address();
+    a.setCap(cdao.getAddressDTO().getCap());
+    a.setCountry(cdao.getAddressDTO().getCountry());
+    a.setStreet(cdao.getAddressDTO().getStreet());
+    a.setHouseNumber(cdao.getAddressDTO().getHouseNumber());
+    a.setMunicipality(municipalityService.getMunicipality(cdao.getAddressDTO().getMunicipality_id()));
     Address save = addressService.saveAddress(a);
 
     Customer c = new Customer();
@@ -58,37 +58,46 @@ public class CustomerService {
     // admin = roleRepository.findByRoleName(ERole.ROLE_ADMIN).get();
     // c.getUser().getRoles().add(admin);
     // utenteService.updateUtente(c.getUser().getId());
-    customerRepository.save(c);
+  return  customerRepository.save(c);
   }
 
-  public Customer updateCustomer(long id, Customer c) {
+  public Customer updateCustomer(long id, CustomerDto c) {
     if (!customerRepository.existsById(id)) {
       throw new EntityExistsException("Customer do not exists");
     }
     Customer old = customerRepository.findById(id).get();
-    if (c.getAddress() == null) {
-      c.setAddress(old.getAddress());
+    if (c.getAddressDTO() != null) {
+    	
+    Address a =	old.getAddress();
+    
+    a.setCap(c.getAddressDTO().getCap());
+    a.setCountry(c.getAddressDTO().getCountry());
+    a.setStreet(c.getAddressDTO().getStreet());
+    a.setHouseNumber(c.getAddressDTO().getHouseNumber());
+    a.setMunicipality(municipalityService.getMunicipality(c.getAddressDTO().getMunicipality_id()));
+    addressService.updateAddress(c.getUser_id(),a);
+    
     }
-    if (c.getCompanyName() == null) {
-      c.setCompanyName(old.getCompanyName());
+    if (c.getCompanyName() != null) {
+      old.setCompanyName(c.getCompanyName());
     }
-    if (c.getCustomerType() == null) {
-      c.setCustomerType(old.getCustomerType());
+    if (c.getCustomerType() != null) {
+    	old.setCustomerType(c.getCustomerType());
     }
-    if (c.getEmail() == null) {
-      c.setEmail(old.getEmail());
+    if (c.getEmail() != null) {
+    	old.setEmail(c.getEmail());
     }
-    if (c.getIva() == null) {
-      c.setIva(old.getIva());
+    if (c.getIva() != null) {
+      old.setIva(c.getIva());
     }
-    if (c.getPec() == null) {
-      c.setPec(old.getPec());
+    if (c.getPec() != null) {
+      old.setPec(c.getPec());
     }
-    if (c.getPhone() == null) {
-      c.setPhone(old.getPhone());
+    if (c.getPhone() != null) {
+      old.setPhone(c.getPhone());
     }
 
-    return customerRepository.save(c);
+    return customerRepository.save(old);
   }
 
   public void removeCustomer(long id) {

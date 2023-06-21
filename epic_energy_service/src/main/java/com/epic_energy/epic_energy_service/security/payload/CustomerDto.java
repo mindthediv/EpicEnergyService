@@ -19,12 +19,12 @@ public class CustomerDto {
     String pec;
     String phone;
     CustomerType customerType;
-    AddressDTO address;
+    AddressDTO addressDTO;
     long user_id;
 
     @Override
     public String toString() {
         return "CustomerDto [companyName=" + companyName + ", iva=" + iva + ", email=" + email + ", pec=" + pec
-                + ", phone=" + phone + ", customerType=" + customerType + ", address=" + address + "]";
+                + ", phone=" + phone + ", customerType=" + customerType + "]";
     }
 }

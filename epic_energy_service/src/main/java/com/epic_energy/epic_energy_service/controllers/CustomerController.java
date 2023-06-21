@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epic_energy.epic_energy_service.models.Customer;
+import com.epic_energy.epic_energy_service.security.payload.AddressDTO;
 import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
+import com.epic_energy.epic_energy_service.services.AddressService;
 import com.epic_energy.epic_energy_service.services.CustomerService;
 
 @RestController
@@ -20,6 +22,7 @@ import com.epic_energy.epic_energy_service.services.CustomerService;
 public class CustomerController {
 
 	@Autowired CustomerService customerService;
+	@Autowired AddressService addressService;
 	
 	
 	@GetMapping("/{id}")
@@ -30,15 +33,17 @@ public class CustomerController {
 	@PostMapping()
 	@PreAuthorize("hasRole('USER')")
 	public void createCustomer(@RequestBody CustomerDto c) {
-		//service , da dto a entità
+		
+		
 		 customerService.saveCustomer(c);
 	}
 	
 //	@PutMapping("/{id}") 
-//	public ResponseEntity<?> updateCustomer(@PathVariable long id,@RequestBody Customer c){
-//		return ResponseEntity.ok(customerService.updateCustomer(c));
+//	public ResponseEntity<?> updateCustomer(@PathVariable long id,@RequestBody CustomerDto c){
+//		
+//		return ResponseEntity.ok(customerService.updateCustomer(id,c));
 //	}
-//	
+	
 	
 	
 }
