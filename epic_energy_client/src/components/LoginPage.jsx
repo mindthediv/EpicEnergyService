@@ -29,8 +29,11 @@ function LoginPage() {
         body: JSON.stringify(formData),
       });
 
+
       if (response.ok) {
         let data = await response.json();
+        window.localStorage.setItem("username ", formData.userName)
+        window.localStorage.setItem("token ", data.accessToken)
         console.log("Login successful" + data.accessToken);
         navigate("/home"); 
       } else {
