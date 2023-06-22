@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.epic_energy.epic_energy_service.enumerated.ERole;
 import com.epic_energy.epic_energy_service.models.Address;
 import com.epic_energy.epic_energy_service.models.Customer;
+import com.epic_energy.epic_energy_service.models.Invoice;
 import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.models.Role;
 import com.epic_energy.epic_energy_service.models.User;
@@ -33,6 +34,8 @@ public class CustomerService {
   UtenteService utenteService;
   @Autowired AddressService addressService;
   @Autowired MunicipalityService municipalityService;
+ 
+  
 
   public Customer saveCustomer(CustomerDto cdao) {
     
@@ -109,6 +112,15 @@ public class CustomerService {
   
   public List<Customer> getAllCustomer(){
 	  return customerRepository.findAll();
+  }
+  public void addInvoice(String customer_Id, Invoice i) {
+  	if(!customerRepository.existsById(customer_Id)) {
+  		throw new EntityExistsException("user non found!");
+  	}
+  	Customer c = customerRepository.findById(customer_Id).get();
+  	c.getCustomer_invoices().add(i);
+  	customerRepository.save(c);
+  	
   }
 
   public Customer getCustomer(String id) {

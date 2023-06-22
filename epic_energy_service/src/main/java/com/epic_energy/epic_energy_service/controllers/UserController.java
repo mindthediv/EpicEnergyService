@@ -8,12 +8,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epic_energy.epic_energy_service.models.User;
 import com.epic_energy.epic_energy_service.security.payload.RegisterDto;
 import com.epic_energy.epic_energy_service.security.payload.UtenteDTO;
 import com.epic_energy.epic_energy_service.services.UtenteService;
+
+import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping("api/users")
@@ -23,7 +26,7 @@ public class UserController {
 	
 	@GetMapping
 	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<?> findByUsername(@RequestBody String username) {
+	public ResponseEntity<?> findByUsername(@RequestParam String username) {
 		
 		return ResponseEntity.ok(utenteService.findByUsername(username));
 	}

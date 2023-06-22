@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.epic_energy.epic_energy_service.models.Invoice;
 import com.epic_energy.epic_energy_service.services.CustomerService;
 import com.epic_energy.epic_energy_service.services.InvoiceService;
+import com.epic_energy.epic_energy_service.services.UtenteService;
 
 @RestController
 @RequestMapping("api/invoice")
@@ -22,6 +23,10 @@ public class InvoiceController {
 
     @Autowired
     InvoiceService invoiceService;
+    @Autowired 
+    UtenteService utenteService;
+    @Autowired 
+    CustomerService customerService;
 
     @GetMapping("/{id}")
     @PreAuthorize("isAuthenticated()")
@@ -29,11 +34,12 @@ public class InvoiceController {
         return ResponseEntity.ok(invoiceService.getInvoice(id));
     }
 
-    @PostMapping("")
+    @PostMapping("/{customer_id}")
     @PreAuthorize("isAuthenticated()")
-    public void createInvoice(@RequestBody Invoice i){
+    public void createInvoice(@PathVariable String customer_id,@RequestBody Invoice i){
         i.setInvoiceDate(LocalDate.now());
         invoiceService.saveInvoice(i);
+        customerService.addInvoice(customer_id, i);
     }
 
     //put

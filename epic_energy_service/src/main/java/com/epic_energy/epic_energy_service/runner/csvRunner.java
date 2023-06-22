@@ -40,8 +40,8 @@
 //  		     System.out.println(p);
 //  		     provinceService.saveProvince(p);
 // 		     // log.info(values[0].toString() + " " + values[1].toString());
-// 		      records.forEach(el -> log.info(el.toString()));
-////}
+//// 		      records.forEach(el -> log.info(el.toString()));
+//}
 //          List<List<String>> records = new ArrayList<>();
 //          BufferedReader br = new BufferedReader(
 //                  new FileReader("C:\\Users\\Aless\\Desktop\\EpicEnergyService\\epic_energy_service\\src\\main\\resources\\comuni-italiani.csv"));

@@ -22,7 +22,7 @@ public class MunicipalityController {
 	@Autowired MunicipalityService municipalityService;
 	
 //	@GetMapping
-////	@PreAuthorize("isAuthenticate()")
+////@PreAuthorize("isAuthenticate()")
 //	public ResponseEntity<List<?>> getAllMunicipality(){
 //		return ResponseEntity.ok(municipalityService.getAllMunicipality());
 //	}

@@ -16,17 +16,22 @@ public class InvoiceService {
       public void saveInvoice(Invoice c) {
         invoiceRepository.save(c);
     }
-      public void updateInvoice(long id) {
+      public void updateInvoice(long id,Invoice c) {
         if(!invoiceRepository.existsById(id)){
           throw new EntityExistsException("Invoice do not exists");
         }
-        Invoice c = invoiceRepository.findById(id).get();
         invoiceRepository.save(c);
     }
       public void removeInvoice(long id) {
+    	  if(!invoiceRepository.existsById(id)){
+              throw new EntityExistsException("Invoice do not exists");
+            }
         invoiceRepository.deleteById(id);;
     }
       public Invoice getInvoice(long id) {
+    	  if(!invoiceRepository.existsById(id)){
+              throw new EntityExistsException("Invoice do not exists");
+            }
         return invoiceRepository.findById(id).get();
     }
 
