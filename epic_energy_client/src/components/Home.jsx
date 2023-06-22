@@ -67,6 +67,8 @@ function BasicExample() {
   };
 
   const handleProvinceChange = (event) => {
+    event.preventDefault();
+    console.log(event)
     setSelectedProvince(event.target.value);
     console.log(selectedProvince);
     handleMunicipality(selectedProvince);
@@ -83,7 +85,7 @@ function BasicExample() {
   const handleMunicipality = function (p) {
     // const provincia = p.target.value;
     // console.log(provincia)
-    fetch("http://localhost:8080/api/municipality?p=" + p.sign ,{
+    fetch("http://localhost:8080/api/municipality?p=" + p ,{
       headers: {
         Authentication: "Bearer " + token,
       },
@@ -298,19 +300,23 @@ function BasicExample() {
                   name="cap"
                   className="mt-3"
                 />
+                
                 <Form.Control
                   as="select"
                   className="mt-3"
                   name="province"
                   onChange={handleProvinceChange}
+                  value={selectedProvince}
                 >
                   <option value="">Seleziona provincia:</option>
                   {province != null ? (
-                    province.map((p) => <option value={p}>{p.sign}</option>)
+                    province.map((p) => <option value={p.sign}>{p.sign}</option>
+                    )
                   ) : (
                     <option>1</option>
                   )}
                 </Form.Control>
+                
                 <Form.Control as="select" className="mt-3" name="municipality">
                   <option value="">Seleziona un comune:</option>
                   {municipality != null ? (
