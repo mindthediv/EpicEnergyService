@@ -756,3 +756,72 @@ org.springframework.security.core.userdetails.UsernameNotFoundException: User no
 16:22:19.047 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 16:22:19.054 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 16:22:19.073 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:22:58.126 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 3116 (D:\EpicEnergyService\epic_energy_service\target\classes started by vince in D:\EpicEnergyService)
+16:22:58.167 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:22:58.277 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:22:58.277 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:22:59.543 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:22:59.680 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116 ms. Found 7 JPA repository interfaces.
+16:23:01.540 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:23:01.564 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:23:01.567 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:23:01.679 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:23:01.681 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3403 ms
+16:23:01.901 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:23:01.970 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+16:23:01.974 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+16:23:02.165 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:23:02.344 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:23:02.368 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:23:02.607 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@49c53bf2
+16:23:02.610 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:23:02.674 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@340f2210
+16:23:03.207 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:23:04.583 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:23:04.753 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:23:05.826 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:23:06.371 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64026be, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@15cd7a76, org.springframework.security.web.context.SecurityContextHolderFilter@25026da2, org.springframework.security.web.header.HeaderWriterFilter@1b0a1a11, org.springframework.web.filter.CorsFilter@6ccea35d, org.springframework.security.web.authentication.logout.LogoutFilter@5d167355, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@3850b71e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@192fb980, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@710497dd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d7a5920, org.springframework.security.web.session.SessionManagementFilter@48f91bc, org.springframework.security.web.access.ExceptionTranslationFilter@529dec60, org.springframework.security.web.access.intercept.AuthorizationFilter@750cc252]
+16:23:06.634 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:23:06.685 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:23:06.709 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 9.242 seconds (process running for 9.851)
+16:24:15.244 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:24:15.247 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:24:15.259 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+16:24:33.470 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:27:03.885 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:27:49.653 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:30:42.725 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:31:42.941 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:37:57.143 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'p' for method parameter type String is not present]
+16:37:57.162 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'p' for method parameter type String is not present]
+16:37:57.974 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'p' for method parameter type String is not present]
+16:37:57.995 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'p' for method parameter type String is not present]
+16:37:58.948 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'p' for method parameter type String is not present]
+16:37:58.961 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'p' for method parameter type String is not present]
+16:38:06.712 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:39:41.517 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:39:43.762 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:39:43.782 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:39:48.436 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:40:18.633 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:40:18.645 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:40:18.968 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:40:18.982 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:40:20.903 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:40:20.995 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:07.989 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:08.020 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:08.963 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:08.970 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:28.731 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:28.751 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:28.981 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:28.997 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:33.947 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:41:33.959 [http-nio-8080-exec-9] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:42:35.995 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:42:36.032 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:42:36.039 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:42:36.049 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:42:40.145 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:42:40.167 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
