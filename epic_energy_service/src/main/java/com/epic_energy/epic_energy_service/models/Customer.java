@@ -1,5 +1,6 @@
 package com.epic_energy.epic_energy_service.models;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class Customer {
     LocalDate lastTouchDate;
     //logica
     @Column(name = "year_sales", nullable = true)
-    int yearSales;
+    BigDecimal yearSales;
     @Column(nullable = false, unique = true)
     String pec; 
     @Column(nullable = false, unique = true)
