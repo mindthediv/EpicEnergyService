@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epic_energy.epic_energy_service.models.Province;
@@ -30,7 +31,7 @@ public class MunicipalityController {
 	
 	@GetMapping
 //	@PreAuthorize("isAuthenticate()")
-	public ResponseEntity<List<?>> getMunicipality(@RequestBody Province p){
+	public ResponseEntity<List<?>> getMunicipality(@RequestParam String p){
 		return ResponseEntity.ok(municipalityService.getAllMunicipalityByProvince(p));
 	}
 }
