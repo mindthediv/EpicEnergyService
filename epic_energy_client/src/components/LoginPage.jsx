@@ -31,11 +31,8 @@ function LoginPage() {
         body: JSON.stringify(formData),
       });
 
-
       if (response.ok) {
         let data = await response.json();
-        window.localStorage.setItem("username ", formData.userName)
-        window.localStorage.setItem("token ", data.accessToken)
         console.log("Login successful" + data.accessToken);
         window.localStorage.setItem("token", data.accessToken);
         navigate("/home");
@@ -90,7 +87,7 @@ function LoginPage() {
             </label>
           </div>
           <button type="submit" className="submit">
-            Login
+              Login
           </button>
           <p className="signin">
             Non hai un account? <Link to="/register-page">Registrati</Link>
