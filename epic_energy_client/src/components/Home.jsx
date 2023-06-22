@@ -65,26 +65,29 @@ function BasicExample() {
     event.stopPropagation();
     handleClose();
   };
+
   const handleProvinceChange = (event) => {
-    setSelectedProvince(event.target.value)
+    setSelectedProvince(event.target.value);
     console.log(selectedProvince);
     handleMunicipality(selectedProvince);
     // Call handleMunicipality or perform any other necessary operations based on the selected province
   };
+
   const handleChange = (event) => {
     setCustomer({
       ...formCustomer,
       [event.target.name]: event.target.value,
     });
   };
+
   const handleMunicipality = function (p) {
     // const provincia = p.target.value;
     // console.log(provincia)
-    fetch("http://localhost:8080/api/municipality", {
+    fetch("http://localhost:8080/api/municipality?p=" + p.sign ,{
       headers: {
-        Authentication: "Bearer" + token,
+        Authentication: "Bearer " + token,
       },
-      body: JSON.stringify(p)
+      //body: JSON.stringify(p)
     })
       .then((response) => {
         if (!response.ok) {
@@ -101,9 +104,10 @@ function BasicExample() {
         // Handle any errors that occurred during the request
       });
   };
+
   useEffect(() => {
     fetch("http://localhost:8080/api/auth/province/all", {
-      method: 'GET',
+      method: "GET",
       headers: {
         Authentication: "Bearer" + token,
       },
@@ -122,7 +126,7 @@ function BasicExample() {
         console.error("Error:", error);
         // Handle any errors that occurred during the request
       });
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, [selectedProvince]); // Empty dependency array to ensure the effect runs only once
   return (
     <>
       <NavBar></NavBar>
@@ -294,12 +298,15 @@ function BasicExample() {
                   name="cap"
                   className="mt-3"
                 />
-                <Form.Control as="select" className="mt-3" name="province" onChange={handleProvinceChange}>
+                <Form.Control
+                  as="select"
+                  className="mt-3"
+                  name="province"
+                  onChange={handleProvinceChange}
+                >
                   <option value="">Seleziona provincia:</option>
                   {province != null ? (
-                    province.map((p) => (
-                      <option value={p}>{p.sign}</option>
-                    ))
+                    province.map((p) => <option value={p}>{p.sign}</option>)
                   ) : (
                     <option>1</option>
                   )}

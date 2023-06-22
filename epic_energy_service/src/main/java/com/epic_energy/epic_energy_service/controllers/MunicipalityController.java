@@ -16,7 +16,7 @@ import com.epic_energy.epic_energy_service.services.MunicipalityService;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3001")
 @RequestMapping("/api/municipality")
 public class MunicipalityController {
 
