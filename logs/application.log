@@ -825,3 +825,35 @@ org.springframework.security.core.userdetails.UsernameNotFoundException: User no
 16:42:36.049 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
 16:42:40.145 [http-nio-8080-exec-2] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
 16:42:40.167 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
+16:55:23.635 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 20188 (D:\EpicEnergyService\epic_energy_service\target\classes started by vince in D:\EpicEnergyService)
+16:55:23.640 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+16:55:23.716 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:55:23.717 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:55:24.812 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:55:24.957 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 7 JPA repository interfaces.
+16:55:26.013 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:55:26.033 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:55:26.038 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:55:26.159 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:55:26.161 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2443 ms
+16:55:26.382 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:55:26.472 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+16:55:26.477 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+16:55:26.722 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:55:26.984 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+16:55:27.023 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:55:27.341 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15a7db71
+16:55:27.362 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:55:27.442 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@341a139c
+16:55:28.081 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+16:55:29.503 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:55:29.694 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:55:30.832 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:55:31.258 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@15cd7a76, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ccea35d, org.springframework.security.web.context.SecurityContextHolderFilter@5d780acf, org.springframework.security.web.header.HeaderWriterFilter@200c538a, org.springframework.web.filter.CorsFilter@1d7a5920, org.springframework.security.web.authentication.logout.LogoutFilter@34818a50, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@10a3e10d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@710497dd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47dd9b22, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a88e9e7, org.springframework.security.web.session.SessionManagementFilter@f09635b, org.springframework.security.web.access.ExceptionTranslationFilter@6ce54bfc, org.springframework.security.web.access.intercept.AuthorizationFilter@60b33933]
+16:55:31.532 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:55:31.610 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:55:31.626 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 8.616 seconds (process running for 9.354)
+16:55:39.232 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:55:39.293 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:55:39.300 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+16:55:46.458 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]

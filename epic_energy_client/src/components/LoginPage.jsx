@@ -9,6 +9,7 @@ function LoginPage() {
     password: "",
   });
 
+
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -37,8 +38,7 @@ function LoginPage() {
         window.localStorage.setItem("token ", data.accessToken)
         console.log("Login successful" + data.accessToken);
         window.localStorage.setItem("token", data.accessToken);
-        setLoginSuccess(true);
-        navigate("/home"); 
+        navigate("/home");
       } else {
         console.log("Login failed");
       }
