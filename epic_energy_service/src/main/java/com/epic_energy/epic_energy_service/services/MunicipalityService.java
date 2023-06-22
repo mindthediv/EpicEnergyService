@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.epic_energy.epic_energy_service.models.Municipality;
 import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.repositories.MunicipalityRepository;
+import com.epic_energy.epic_energy_service.repositories.ProvinceRepository;
 
 import jakarta.persistence.EntityExistsException;
 
@@ -15,6 +16,7 @@ import jakarta.persistence.EntityExistsException;
 public class MunicipalityService {
      @Autowired
     private MunicipalityRepository municipalityRepository;
+     @Autowired ProvinceRepository provinceRepository;
 
       public void saveMunicipality(Municipality c) {
         municipalityRepository.save(c);
@@ -35,7 +37,8 @@ public class MunicipalityService {
       public List<Municipality> getAllMunicipality() {
         return municipalityRepository.findAll();
     }
-     public List<Municipality> getAllMunicipalityByProvince(Province province) {
-         return municipalityRepository.findByProvincename(province);
+     public List<Municipality> getAllMunicipalityByProvince(String province) {
+    	Province p = provinceRepository.findById(province).get();
+         return municipalityRepository.findByProvincename(p);
      }
 }

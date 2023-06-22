@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.epic_energy.epic_energy_service.models.Invoice;
 
 @Repository
-public interface InvoiceRepository extends JpaRepository<Invoice, Long>  {
+public interface InvoiceRepository extends JpaRepository<Invoice, Integer>  {
     
 }

@@ -1,6 +1,7 @@
 package com.epic_energy.epic_energy_service.services;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,12 +9,15 @@ import org.springframework.stereotype.Service;
 import com.epic_energy.epic_energy_service.enumerated.ERole;
 import com.epic_energy.epic_energy_service.models.Address;
 import com.epic_energy.epic_energy_service.models.Customer;
+import com.epic_energy.epic_energy_service.models.Invoice;
 import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.models.Role;
 import com.epic_energy.epic_energy_service.models.User;
 import com.epic_energy.epic_energy_service.repositories.CustomerRepository;
+import com.epic_energy.epic_energy_service.repositories.InvoiceRepository;
 import com.epic_energy.epic_energy_service.security.payload.AddressDTO;
 import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
+import com.epic_energy.epic_energy_service.security.payload.UtenteDTO;
 import com.epic_energy.epic_energy_service.security.repository.RoleDAO;
 import com.epic_energy.epic_energy_service.security.repository.UtenteDAO;
 
@@ -31,6 +35,9 @@ public class CustomerService {
   UtenteService utenteService;
   @Autowired AddressService addressService;
   @Autowired MunicipalityService municipalityService;
+  @Autowired InvoiceRepository invoiceRepository;
+ 
+  
 
   public Customer saveCustomer(CustomerDto cdao) {
     
@@ -53,15 +60,12 @@ public class CustomerService {
     c.setPec(cdao.getPec());
     c.setPhone(cdao.getPhone());
     c.setSubscriptionDate(LocalDate.now());
-    c.setUser(utenteDAO.findById(cdao.getUser_id()).get());
-    // Role admin = new Role();
-    // admin = roleRepository.findByRoleName(ERole.ROLE_ADMIN).get();
-    // c.getUser().getRoles().add(admin);
-    // utenteService.updateUtente(c.getUser().getId());
+    utenteService.addRole(cdao.getUser_id());
+    c.setUser(utenteService.findUserById(cdao.getUser_id()).get());
   return  customerRepository.save(c);
   }
 
-  public Customer updateCustomer(long id, CustomerDto c) {
+  public Customer updateCustomer(String id, CustomerDto c) {
     if (!customerRepository.existsById(id)) {
       throw new EntityExistsException("Customer do not exists");
     }
@@ -100,13 +104,42 @@ public class CustomerService {
     return customerRepository.save(old);
   }
 
-  public void removeCustomer(long id) {
+  public void removeCustomer(String id) {
+	  if (!customerRepository.existsById(id)) {
+	      throw new EntityExistsException("Customer do not exists");
+	    }
     customerRepository.deleteById(id);
     ;
   }
+  
+  public List<Customer> getAllCustomer(){
+	  return customerRepository.findAll();
+  }
+  public void addInvoice(String customer_Id, Integer invoice_id) {
+  	if(!customerRepository.existsById(customer_Id)) {
+  		throw new EntityExistsException("user non found!");
+  	}
+  	Customer c = customerRepository.findById(customer_Id).get();
+  	Invoice i = invoiceRepository.findById(invoice_id).get();
+  	c.getCustomer_invoices().add(i);
+  	System.out.println(c.toString());
+  	customerRepository.save(c);
+  	
+  }
 
-  public Customer getCustomer(long id) {
+  public Customer getCustomer(String id) {
+	  if (!customerRepository.existsById(id)) {
+	      throw new EntityExistsException("Customer do not exists");
+	    }
     return customerRepository.findById(id).get();
+  }
+  
+  public String deleteCustomer(String id) {
+	  if (!customerRepository.existsById(id)) {
+	      throw new EntityExistsException("Customer do not exists");
+	    }
+	  customerRepository.deleteById(id);
+	  return "Deleted";
   }
 
 }

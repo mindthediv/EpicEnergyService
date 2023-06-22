@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.epic_energy.epic_energy_service.enumerated.CustomerType;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -50,7 +51,7 @@ public class Customer {
     @Column(nullable = false, name = "customer_type")
     @Enumerated(EnumType.STRING)
     CustomerType customerType;
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     Address address;
     @OneToOne
     User user;
