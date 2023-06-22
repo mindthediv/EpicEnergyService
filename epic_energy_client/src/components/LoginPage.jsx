@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../img/logonobg.png";
 
 function LoginPage() {
@@ -8,8 +8,7 @@ function LoginPage() {
     userName: "",
     password: "",
   });
-
-  const navigate = useNavigate();
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const handleChange = (event) => {
     setFormData({
@@ -30,13 +29,11 @@ function LoginPage() {
         body: JSON.stringify(formData),
       });
 
-
       if (response.ok) {
         let data = await response.json();
-        window.localStorage.setItem("username ", formData.userName)
-        window.localStorage.setItem("token ", data.accessToken)
         console.log("Login successful" + data.accessToken);
-        navigate("/home"); 
+        window.localStorage.setItem("token", data.accessToken);
+        setLoginSuccess(true);
       } else {
         console.log("Login failed");
       }
@@ -88,7 +85,9 @@ function LoginPage() {
             </label>
           </div>
           <button type="submit" className="submit">
-            Login
+            <Link to="/home" className="text-light text-decoration-none">
+              Login
+            </Link>
           </button>
           <p className="signin">
             Non hai un account? <Link to="/register-page">Registrati</Link>
