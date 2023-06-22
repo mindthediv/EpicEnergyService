@@ -63,6 +63,28 @@ function BasicExample() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
+    fetch("http://localhost:8080/api/customer", {
+      method: "POST",
+      headers: {
+        Authentication: "Bearer " + token,
+      },
+      body: JSON.stringify(event)
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((municipality) => {
+        setMunicipality(municipality); // Update the state with the fetched data
+        console.log(municipality);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle any errors that occurred during the request
+      });
+
     handleClose();
   };
 
