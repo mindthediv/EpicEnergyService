@@ -14,6 +14,7 @@ import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.models.Role;
 import com.epic_energy.epic_energy_service.models.User;
 import com.epic_energy.epic_energy_service.repositories.CustomerRepository;
+import com.epic_energy.epic_energy_service.repositories.InvoiceRepository;
 import com.epic_energy.epic_energy_service.security.payload.AddressDTO;
 import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
 import com.epic_energy.epic_energy_service.security.payload.UtenteDTO;
@@ -34,6 +35,7 @@ public class CustomerService {
   UtenteService utenteService;
   @Autowired AddressService addressService;
   @Autowired MunicipalityService municipalityService;
+  @Autowired InvoiceRepository invoiceRepository;
  
   
 
@@ -113,12 +115,14 @@ public class CustomerService {
   public List<Customer> getAllCustomer(){
 	  return customerRepository.findAll();
   }
-  public void addInvoice(String customer_Id, Invoice i) {
+  public void addInvoice(String customer_Id, Integer invoice_id) {
   	if(!customerRepository.existsById(customer_Id)) {
   		throw new EntityExistsException("user non found!");
   	}
   	Customer c = customerRepository.findById(customer_Id).get();
+  	Invoice i = invoiceRepository.findById(invoice_id).get();
   	c.getCustomer_invoices().add(i);
+  	System.out.println(c.toString());
   	customerRepository.save(c);
   	
   }

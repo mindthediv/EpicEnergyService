@@ -12,23 +12,27 @@ import jakarta.persistence.EntityExistsException;
 public class InvoiceService {
      @Autowired
     private InvoiceRepository invoiceRepository;
+     @Autowired 
+     CustomerService customerService;
 
-      public void saveInvoice(Invoice c) {
-        invoiceRepository.save(c);
+      public void saveInvoice(String customer_id,Invoice c) {
+      Invoice saved =  invoiceRepository.save(c);
+        
+        customerService.addInvoice(customer_id, saved.getInvoice_number());
     }
-      public void updateInvoice(long id,Invoice c) {
+      public void updateInvoice(Integer id,Invoice c) {
         if(!invoiceRepository.existsById(id)){
           throw new EntityExistsException("Invoice do not exists");
         }
         invoiceRepository.save(c);
     }
-      public void removeInvoice(long id) {
+      public void removeInvoice(Integer id) {
     	  if(!invoiceRepository.existsById(id)){
               throw new EntityExistsException("Invoice do not exists");
             }
         invoiceRepository.deleteById(id);;
     }
-      public Invoice getInvoice(long id) {
+      public Invoice getInvoice(Integer id) {
     	  if(!invoiceRepository.existsById(id)){
               throw new EntityExistsException("Invoice do not exists");
             }
