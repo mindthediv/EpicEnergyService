@@ -1,6 +1,4 @@
-// backdrop-filter: blur(10px);
-//   background: rgba(0, 0, 0, 0.461) !important;
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -11,10 +9,60 @@ import { Link } from "react-router-dom";
 import Logo from "../img/Logo.png";
 
 function Barra() {
-  const [showOffcanvas, setShowOffcanvas] = useState(false);
+    const [showOffcanvas, setShowOffcanvas] = useState(false);
+    const [user, setUser] = useState(null);
+
 
   const handleOffcanvasClose = () => setShowOffcanvas(false);
   const handleOffcanvasShow = () => setShowOffcanvas(true);
+
+  const userName = localStorage.getItem("username ");
+  const token = window.localStorage.getItem("token");
+
+  async function login(userName) {
+    try {
+      const response = await fetch("http://localhost8080/api/auth/all",
+       {
+               headers: {
+                 Authentication: "Bearer" + token,
+             },});
+      if(response.ok) {
+        let data = await response;
+        console.log("sono l oggetto user")
+        setUser(data)
+      }
+    }
+      catch (error) {
+
+      }
+    }
+
+    useEffect(() => {
+      login(userName)
+      console.log(userName);
+  //     fetch("http://localhost:8080/api/auth/province/all", {
+  //       headers: {
+  //         Authentication: "Bearer" + token,
+  //       },
+  //     })
+  //       .then((response) => {
+  //         if (!response.ok) {
+  //           throw new Error("Network response was not ok");
+  //         }
+  //         return response.json();
+  //       })
+  //       .then((province) => {
+  //         setProvince(province); // Update the state with the fetched data
+  //         console.log(province);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error:", error);
+  //         // Handle any errors that occurred during the request
+  //       });
+     }, []); // Empty dependency array to ensure the effect runs only once
+  // const token = window.localStorage.getItem("token");
+  
+
 
   return (
     <>
@@ -53,6 +101,7 @@ function Barra() {
               ></Nav.Link>
             </Nav>
           </Navbar.Collapse>
+          <p>{user != null ? (user.userName) : "" }</p> 
           <Button variant="transparent" className="me-2">
             <AiTwotoneSetting onClick={handleOffcanvasShow} className="fs-4" />
           </Button>

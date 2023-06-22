@@ -8,6 +8,11 @@ import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 
 function App() {
+
+  
+  
+
+
     async function fetchTest() {
       try {
         const response = await fetch("http://localhost:8080/api/test");
