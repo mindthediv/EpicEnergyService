@@ -1,49 +1,100 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import Logo from "../img/logonobg.png";
 
 function LoginPage() {
-  const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+  const [formData, setFormData] = useState({
+    userName: "",
+    password: "",
+  });
+  const [loginSuccess, setLoginSuccess] = useState(false);
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8080/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        let data = await response.json();
+        console.log("Login successful" + data.accessToken);
+        window.localStorage.setItem("token", data.accessToken);
+        setLoginSuccess(true);
+      } else {
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.log("An error occurred while logging in");
     }
-
-    setValidated(true);
   };
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit} className='w-50 mx-auto mt-5'>
-      
-        <Form.Group as={Col} md="4" controlId="validationCustom01" className='mx-auto '>
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="First name"
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02" className='mx-auto'>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            required
-            type="password"
-            placeholder="Password"
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-      <Button type="submit" className='mx-5 mt-5'>Login</Button>
-      <Button type="submit" className='mx-5 mt-5'> <Link to="/register-page" className='text-light text-decoration-none'>Registrati</Link></Button>
-    </Form>
+    <div>
+      <Link to="/home">
+        <img
+          src={Logo}
+          width="70"
+          height="70"
+          className="d-inline align-top m-4"
+          alt="React Bootstrap logo"
+          style={{ position: "fixed" }}
+        />
+      </Link>
+      <div className="centered-container w-100">
+        <form className="form" onSubmit={handleSubmit}>
+          <p className="title text-center fs-3">Login</p>
+          <div className="flex">
+            <label>
+              <input
+                required
+                placeholder=""
+                type="text"
+                className="input"
+                name="userName"
+                value={formData.userName}
+                onChange={handleChange}
+              />
+              <span>UserName</span>
+            </label>
+
+            <label>
+              <input
+                required
+                placeholder=""
+                type="password"
+                className="input"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              <span>Password</span>
+            </label>
+          </div>
+          <button type="submit" className="submit">
+            <Link to="/home" className="text-light text-decoration-none">
+              Login
+            </Link>
+          </button>
+          <p className="signin">
+            Non hai un account? <Link to="/register-page">Registrati</Link>
+          </p>
+        </form>
+      </div>
+    </div>
   );
 }
 

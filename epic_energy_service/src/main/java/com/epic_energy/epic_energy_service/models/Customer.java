@@ -58,7 +58,7 @@ public class Customer {
     @OneToMany
     List<Invoice> customer_invoices;
     // Da qui in poi direi di creare una classe User che sostituirà 'contact'
-    // i cui dati li  richiediamo in fase di iscrizione. I dati sopra saranno chiesti successivamente, 
+    // i cui dati li  richiediamo in fase di iscrizione. I dati sopra saranno chiesti successivamente,
     // quando lo User sarà nel db.
     //String contactEmail;
     //String contactName;
