@@ -19,7 +19,7 @@ import com.epic_energy.epic_energy_service.services.AddressService;
 import com.epic_energy.epic_energy_service.services.CustomerService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3002")
 @RequestMapping("api/customer")
 public class CustomerController {
 
