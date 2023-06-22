@@ -1,5 +1,3 @@
-// backdrop-filter: blur(10px);
-//   background: rgba(0, 0, 0, 0.461) !important;
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -10,8 +8,8 @@ import { AiTwotoneSetting } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Logo from "../img/Logo.png";
 
-function Barra() {
-  const [showOffcanvas, setShowOffcanvas] = useState(false);
+function Barra(props) {
+    const [showOffcanvas, setShowOffcanvas] = useState(false);
 
   const handleOffcanvasClose = () => setShowOffcanvas(false);
   const handleOffcanvasShow = () => setShowOffcanvas(true);
@@ -53,7 +51,7 @@ function Barra() {
               ></Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <p>ciao</p>
+          <p>{props.username}</p> 
           <Button variant="transparent" className="me-2">
             <AiTwotoneSetting onClick={handleOffcanvasShow} className="fs-4" />
           </Button>
