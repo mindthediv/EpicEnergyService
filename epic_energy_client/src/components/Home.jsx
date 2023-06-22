@@ -103,6 +103,7 @@ function BasicExample() {
   };
   useEffect(() => {
     fetch("http://localhost:8080/api/auth/province/all", {
+      method: 'GET',
       headers: {
         Authentication: "Bearer" + token,
       },
