@@ -53,6 +53,7 @@ function Barra() {
               ></Nav.Link>
             </Nav>
           </Navbar.Collapse>
+          <p>ciao</p>
           <Button variant="transparent" className="me-2">
             <AiTwotoneSetting onClick={handleOffcanvasShow} className="fs-4" />
           </Button>
