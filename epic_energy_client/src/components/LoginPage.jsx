@@ -83,9 +83,9 @@ function LoginPage() {
             </label>
           </div>
           <button type="submit" className="submit">
-            <Link to="/home" className="text-light text-decoration-none">
+            {/* <Link to="/home" className="text-light text-decoration-none"> */}
               Login
-            </Link>
+            {/* </Link> */}
           </button>
           <p className="signin">
             Non hai un account? <Link to="/register-page">Registrati</Link>

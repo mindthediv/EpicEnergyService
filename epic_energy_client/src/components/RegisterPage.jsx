@@ -35,7 +35,7 @@ function RegisterPage() {
       if (response.ok) {
         console.log("Registrazione avvenuta con successo");
       } else {
-        console.log("Errore durante la registrazione");
+        console.log("Errore durante la registrazione " + formData );
       }
     } catch (error) {
       console.log("Si è verificato un errore durante la richiesta di registrazione");
