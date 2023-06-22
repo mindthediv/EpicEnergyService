@@ -1,9 +1,12 @@
 package com.epic_energy.epic_energy_service.services;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.epic_energy.epic_energy_service.enumerated.ERole;
@@ -39,32 +42,37 @@ public class CustomerService {
  
   
 
-  public Customer saveCustomer(CustomerDto cdao) {
-    
-	  
-	  
-	  Address a = new Address();
-    a.setCap(cdao.getAddressDTO().getCap());
-    a.setCountry(cdao.getAddressDTO().getCountry());
-    a.setStreet(cdao.getAddressDTO().getStreet());
-    a.setHouseNumber(cdao.getAddressDTO().getHouseNumber());
-    a.setMunicipality(municipalityService.getMunicipality(cdao.getAddressDTO().getMunicipality_id()));
-    Address save = addressService.saveAddress(a);
-
-    Customer c = new Customer();
-    c.setAddress(save);
-    c.setCompanyName(cdao.getCompanyName());
-    c.setCustomerType(cdao.getCustomerType());
-    c.setEmail(cdao.getEmail());
-    c.setIva(cdao.getIva());
-    c.setPec(cdao.getPec());
-    c.setPhone(cdao.getPhone());
-    c.setSubscriptionDate(LocalDate.now());
-    utenteService.addRole(cdao.getUser_id());
-    c.setUser(utenteService.findUserById(cdao.getUser_id()).get());
-  return  customerRepository.save(c);
+  public ResponseEntity<?>  saveCustomer(CustomerDto cdao) {
+     User u = utenteDAO.findById(cdao.getUser_id()).get();
+     Customer check = customerRepository.findByUser(u);
+	if(check == null) {
+		
+		Address a = new Address();
+		a.setCap(cdao.getAddressDTO().getCap());
+		a.setCountry(cdao.getAddressDTO().getCountry());
+		a.setStreet(cdao.getAddressDTO().getStreet());
+		a.setHouseNumber(cdao.getAddressDTO().getHouseNumber());
+		a.setMunicipality(municipalityService.getMunicipality(cdao.getAddressDTO().getMunicipality_id()));
+		Address save = addressService.saveAddress(a);
+		
+		Customer c = new Customer();
+		c.setAddress(save);
+		c.setCompanyName(cdao.getCompanyName());
+		c.setCustomerType(cdao.getCustomerType());
+		c.setEmail(cdao.getEmail());
+		c.setIva(cdao.getIva());
+		c.setPec(cdao.getPec());
+		c.setPhone(cdao.getPhone());
+		c.setSubscriptionDate(LocalDate.now());
+		
+		utenteService.addRole(cdao.getUser_id());
+		c.setUser(utenteService.findUserById(cdao.getUser_id()).get());
+		
+		
+		return ResponseEntity.ok(customerRepository.save(c))  ;
+	}
+	  return ResponseEntity.badRequest().body("non si possono creare società con un unico account");
   }
-
   public Customer updateCustomer(String id, CustomerDto c) {
     if (!customerRepository.existsById(id)) {
       throw new EntityExistsException("Customer do not exists");
@@ -122,6 +130,7 @@ public class CustomerService {
   	Customer c = customerRepository.findById(customer_Id).get();
   	Invoice i = invoiceRepository.findById(invoice_id).get();
   	c.getCustomer_invoices().add(i);
+  	c.setLastTouchDate(i.getInvoiceDate());
   	System.out.println(c.toString());
   	customerRepository.save(c);
   	
