@@ -15,7 +15,7 @@ function BasicExample() {
 
   const [province, setProvince] = useState(null);
   const [municipality, setMunicipality] = useState(null);
-  const [selectedProvince, setSelectedProvince] = useState(null);
+  const [selectedProvince, setSelectedProvince] = useState("");
 
   //mostra/nascondi modale
   const handleClose = () => setShow(false);
@@ -68,7 +68,7 @@ function BasicExample() {
 
   const handleProvinceChange = (event) => {
     event.preventDefault();
-    console.log(event)
+    console.dir(event.target);
     setSelectedProvince(event.target.value);
     console.log(selectedProvince);
     handleMunicipality(selectedProvince);
@@ -85,7 +85,7 @@ function BasicExample() {
   const handleMunicipality = function (p) {
     // const provincia = p.target.value;
     // console.log(provincia)
-    fetch("http://localhost:8080/api/municipality?p=" + p ,{
+    fetch("http://localhost:8080/api/municipality?p=" + p, {
       headers: {
         Authentication: "Bearer " + token,
       },
@@ -128,7 +128,35 @@ function BasicExample() {
         console.error("Error:", error);
         // Handle any errors that occurred during the request
       });
-  }, [selectedProvince]); // Empty dependency array to ensure the effect runs only once
+  }, []); // Empty dependency array to ensure the effect runs only once
+
+  useEffect(() => {
+    // const provincia = p.target.value;
+    // console.log(provincia)
+    if (selectedProvince) {
+    fetch("http://localhost:8080/api/municipality?p=" + selectedProvince, {
+      headers: {
+        Authentication: "Bearer " + token,
+      },
+      //body: JSON.stringify(p)
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((municipality) => {
+        setMunicipality(municipality); // Update the state with the fetched data
+        console.log(municipality);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle any errors that occurred during the request
+      });
+    }
+  }, [selectedProvince]);
+
   return (
     <>
       <NavBar></NavBar>
@@ -300,33 +328,36 @@ function BasicExample() {
                   name="cap"
                   className="mt-3"
                 />
-                
-                <Form.Control
-                  as="select"
+
+                <Form.Select
                   className="mt-3"
                   name="province"
                   onChange={handleProvinceChange}
-                  value={selectedProvince}
                 >
                   <option value="">Seleziona provincia:</option>
                   {province != null ? (
-                    province.map((p) => <option value={p.sign}>{p.sign}</option>
-                    )
-                  ) : (
-                    <option>1</option>
-                  )}
-                </Form.Control>
-                
-                <Form.Control as="select" className="mt-3" name="municipality">
-                  <option value="">Seleziona un comune:</option>
-                  {municipality != null ? (
-                    municipality.map((m) => (
-                      <option value={m.id}>{m.name}</option>
+                    province.map((p) => (
+                      <option key={p.sign} value={p.sign}>
+                        {p.sign}
+                      </option>
                     ))
                   ) : (
                     <option>1</option>
                   )}
-                </Form.Control>
+                </Form.Select>
+
+                <Form.Select className="mt-3" name="municipality">
+                  <option value="">Seleziona un comune:</option>
+                  {municipality != null ? (
+                    municipality.map((m) => (
+                      <option key={m.id} value={m.id}>
+                        {m.name}
+                      </option>
+                    ))
+                  ) : (
+                    <option>1</option>
+                  )}
+                </Form.Select>
               </Form.Group>
             </Form>
           </Modal.Body>

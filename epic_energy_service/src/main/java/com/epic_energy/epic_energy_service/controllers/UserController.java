@@ -12,12 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.epic_energy.epic_energy_service.models.User;
-import com.epic_energy.epic_energy_service.security.payload.RegisterDto;
 import com.epic_energy.epic_energy_service.security.payload.UtenteDTO;
 import com.epic_energy.epic_energy_service.services.UtenteService;
-
-import jakarta.websocket.server.PathParam;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3001")
@@ -26,18 +22,12 @@ public class UserController {
 
 	@Autowired UtenteService utenteService;
 	
-	@GetMapping("/{userName}")
-    @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> findByUsername(@PathVariable String username) {
-
-        return ResponseEntity.ok(utenteService.findByUsername(username));
-    }
-	// @GetMapping
-	// @PreAuthorize("hasRole('USER')")
-	// public ResponseEntity<?> findByUsername(@RequestParam String username) {
+	@GetMapping
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> findByUsername(@RequestParam String username) {
 		
-	// 	return ResponseEntity.ok(utenteService.findByUsername(username));
-	// }
+		return ResponseEntity.ok(utenteService.findByUsername(username));
+	}
 	
 	@GetMapping("/{id}")
 	@PreAuthorize("hasRole('USER')")

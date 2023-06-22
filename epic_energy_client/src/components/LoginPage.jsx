@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../img/logonobg.png";
 
 function LoginPage() {
@@ -8,7 +8,9 @@ function LoginPage() {
     userName: "",
     password: "",
   });
-  const [loginSuccess, setLoginSuccess] = useState(false);
+
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setFormData({
@@ -33,7 +35,7 @@ function LoginPage() {
         let data = await response.json();
         console.log("Login successful" + data.accessToken);
         window.localStorage.setItem("token", data.accessToken);
-        setLoginSuccess(true);
+        navigate("/home");
       } else {
         console.log("Login failed");
       }
