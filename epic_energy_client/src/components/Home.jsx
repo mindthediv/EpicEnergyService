@@ -48,7 +48,7 @@ function BasicExample() {
       headers: {
         Authentication: "Bearer " + token,
       },
-      body: JSON.stringify(event),
+      body: JSON.stringify(formCustomer),
     })
       .then((response) => {
         if (!response.ok) {
@@ -64,7 +64,7 @@ function BasicExample() {
         console.error("Error:", error);
         // Handle any errors that occurred during the request
       });
-      console.log(formCustomer)
+    console.log(formCustomer);
     handleClose();
   };
 
@@ -78,6 +78,7 @@ function BasicExample() {
   };
 
   const handleChange = (event) => {
+    console.log("sto cambiando stato");
     setCustomer({
       ...formCustomer,
       [event.target.name]: event.target.value,
@@ -253,7 +254,6 @@ function BasicExample() {
           Inviaci i dati
         </Button>
 
-
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
@@ -269,6 +269,7 @@ function BasicExample() {
                   type="text"
                   placeholder="Nome Azienda"
                   autoFocus
+                  name="companyName"
                   className="mt-3"
                   value={formCustomer.companyName}
                   onChange={handleChange}
@@ -277,6 +278,7 @@ function BasicExample() {
                   type="iva"
                   placeholder="Iva"
                   autoFocus
+                  name="iva"
                   className="mt-3"
                   value={formCustomer.iva}
                   onChange={handleChange}
@@ -285,6 +287,7 @@ function BasicExample() {
                   type="email"
                   placeholder="Email"
                   autoFocus
+                  name="email"
                   className="mt-3"
                   value={formCustomer.email}
                   onChange={handleChange}
@@ -293,6 +296,7 @@ function BasicExample() {
                   type="pec"
                   placeholder="Pec"
                   autoFocus
+                  name="pec"
                   className="mt-3"
                   value={formCustomer.pec}
                   onChange={handleChange}
@@ -301,6 +305,7 @@ function BasicExample() {
                   type="number"
                   placeholder="Telefono"
                   autoFocus
+                  name="phone"
                   className="mt-3"
                   value={formCustomer.phone}
                   onChange={handleChange}
@@ -310,6 +315,7 @@ function BasicExample() {
                   type="customerType"
                   placeholder="Tipo Cliente"
                   autoFocus
+                  name="customerType"
                   className="mt-3"
                   value={formCustomer.customerType}
                   onChange={handleChange}
@@ -325,7 +331,7 @@ function BasicExample() {
                   placeholder="Via"
                   name="street"
                   className="mt-3"
-                  value={formCustomer.address.street}
+                  value={formCustomer.street}
                   onChange={handleChange}
                 />
                 <Form.Control
@@ -333,7 +339,7 @@ function BasicExample() {
                   placeholder="Numero civico"
                   name="houseNumber"
                   className="mt-3"
-                  value={formCustomer.address.houseNumber}
+                  value={formCustomer.houseNumber}
                   onChange={handleChange}
                 />
                 <Form.Control
@@ -341,7 +347,7 @@ function BasicExample() {
                   placeholder="Paese"
                   name="country"
                   className="mt-3"
-                  value={formCustomer.address.country}
+                  value={formCustomer.country}
                   onChange={handleChange}
                 />
                 <Form.Control
@@ -349,7 +355,7 @@ function BasicExample() {
                   placeholder="CAP"
                   name="cap"
                   className="mt-3"
-                  value={formCustomer.address.cap}
+                  value={formCustomer.cap}
                   onChange={handleChange}
                 />
                 <Form.Select
@@ -371,8 +377,8 @@ function BasicExample() {
 
                 <Form.Select
                   className="mt-3"
-                  name="municipality"
-                  value={formCustomer.address.municipality_id}
+                  name="municipality_id"
+                  value={formCustomer.municipality_id}
                   onChange={handleChange}
                 >
                   <option value="">Seleziona un comune:</option>
