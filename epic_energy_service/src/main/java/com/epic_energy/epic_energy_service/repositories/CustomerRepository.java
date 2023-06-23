@@ -9,9 +9,12 @@ import com.epic_energy.epic_energy_service.models.User;
 
 import java.util.List;
 import java.util.Optional;
+import java.math.BigDecimal;
+
 
 
 @Repository
 public interface CustomerRepository  extends JpaRepository<Customer, String> {
    public Customer findByUser(User u);
+ 
 }
