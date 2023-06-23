@@ -1,0 +1,32 @@
+10:41:14.294 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Starting EpicEnergyServiceApplication using Java 17.0.7 with PID 8548 (D:\EpicEnergyService\epic_energy_service\target\classes started by vince in D:\EpicEnergyService)
+10:41:14.329 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - No active profile set, falling back to 1 default profile: "default"
+10:41:14.622 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+10:41:14.716 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+10:41:16.548 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+10:41:16.960 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 375 ms. Found 7 JPA repository interfaces.
+10:41:20.606 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+10:41:20.745 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+10:41:20.766 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+10:41:21.012 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+10:41:21.014 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6260 ms
+10:41:21.861 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+10:41:22.054 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+10:41:22.060 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+10:41:22.485 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+10:41:22.758 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+10:41:22.783 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+10:41:23.171 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@192fe1c6
+10:41:23.181 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+10:41:23.266 [restartedMain] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@5cf80f88
+10:41:24.014 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+10:41:25.512 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+10:41:25.818 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+10:41:27.583 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+10:41:28.236 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4713fc2b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@335ee7b4, org.springframework.security.web.context.SecurityContextHolderFilter@7c1c20dc, org.springframework.security.web.header.HeaderWriterFilter@5d780acf, org.springframework.web.filter.CorsFilter@4afa9c8d, org.springframework.security.web.authentication.logout.LogoutFilter@15cd7a76, com.epic_energy.epic_energy_service.security.security.JwtAuthenticationFilter@3fc0015f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@55f9a5ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a4bc6a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67ff254b, org.springframework.security.web.session.SessionManagementFilter@208dca66, org.springframework.security.web.access.ExceptionTranslationFilter@72334e06, org.springframework.security.web.access.intercept.AuthorizationFilter@2c2b0247]
+10:41:28.815 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+10:41:29.014 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+10:41:29.033 [restartedMain] INFO  c.e.e.EpicEnergyServiceApplication - Started EpicEnergyServiceApplication in 15.889 seconds (process running for 17.753)
+10:43:08.826 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:43:08.832 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+10:43:08.835 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+10:55:36.317 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.util.NoSuchElementException: No value present]
