@@ -24,31 +24,54 @@ function BasicExample() {
   };
   //indirizzo dal modale
 
+  const customer = {
+    companyName: "test",
+    iva: "1111111111",
+    email: "testo@hotmail.com",
+    pec: "testo@pec.it",
+    phone: "944885784",
+    customerType: "SPA",
+    user_id: 2,
+    addressDTO: {
+      street: "Via test",
+      houseNumber: "00982345356",
+      country: "Italy",
+      cap: "456778",
+      municipality_id: 1052,
+    },
+  };
+
   const [formCustomer, setCustomer] = useState({
     companyName: "",
     iva: "",
     email: "",
     pec: "",
     phone: "",
-    customerType: "", //dropdown SPA ecc
-    user_id: "",
-    address: {
-      street: "", //a mano
-      houseNumber: "", //a mano
-      country: "",
-      cap: "",
-      municipality_id: "", // dropdown
+    customerType: "SPA", //dropdown SPA ecc
+    user_id: 1,
+    addressDTO: {
+      street: "test", //a mano
+      houseNumber: "test", //a mano
+      country: "test",
+      cap: "0000",
+      municipality_id: 500, // dropdown
     },
   });
+  var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJyaSIsImlhdCI6MTY4NzUxNDM2NiwiZXhwIjoxNjg4Mzc4MzY2fQ.6avIVi5LALw3lXiD8w006drok-bgE_o8oiEPS-cRVJXn1W6YTAJQGTe9pqSOpcta");
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
     fetch("http://localhost:8080/api/customer", {
       method: "POST",
-      headers: {
-        Authentication: "Bearer " + token,
-      },
-      body: JSON.stringify(formCustomer),
+      body: JSON.stringify(customer),
+      //myHeaders,
+         headers: {
+           'Content-type': 'application/json; charset=UTF-8',
+           Authentication: "Bearer " + token,
+         },
     })
       .then((response) => {
         if (!response.ok) {

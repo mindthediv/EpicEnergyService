@@ -35,9 +35,9 @@ public class CustomerController {
 	}
 
 	@PostMapping()
-	@PreAuthorize("hasRole('USER')")
+	@PreAuthorize("isAuthenticated()")
 	public void createCustomer(@RequestBody CustomerDto c) {
-
+		System.out.println(c);	
 		customerService.saveCustomer(c);
 	}
 
