@@ -16,7 +16,7 @@ import com.epic_energy.epic_energy_service.security.payload.UtenteDTO;
 import com.epic_energy.epic_energy_service.services.UtenteService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3002")
+@CrossOrigin(origins = "*")
 @RequestMapping("api/users")
 public class UserController {
 

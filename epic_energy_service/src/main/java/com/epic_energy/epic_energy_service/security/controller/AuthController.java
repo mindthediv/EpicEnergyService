@@ -20,7 +20,7 @@ import com.epic_energy.epic_energy_service.security.repository.UtenteDAO;
 import com.epic_energy.epic_energy_service.security.service.AuthService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3002")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/auth")
 public class AuthController {
 

@@ -12,7 +12,7 @@ import com.epic_energy.epic_energy_service.models.Province;
 import com.epic_energy.epic_energy_service.repositories.ProvinceRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3002")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/auth/province")
 public class ProvinceController {
 
