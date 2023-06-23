@@ -22,24 +22,23 @@ function BasicExample() {
   const handleShow = function () {
     setShow(true);
   };
-  //indirizzo dal modale
 
-  const customer = {
-    companyName: "test",
-    iva: "1111111111",
-    email: "testo@hotmail.com",
-    pec: "testo@pec.it",
-    phone: "944885784",
-    customerType: "SPA",
-    user_id: 2,
-    addressDTO: {
-      street: "Via test",
-      houseNumber: "00982345356",
-      country: "Italy",
-      cap: "456778",
-      municipality_id: 1052,
-    },
-  };
+  // var obj = JSON.stringify({
+  //   companyName: "Abc",
+  //   iva: "123456789",
+  //   email: "abc@example.com",
+  //   pec: "abc.pec@example.com",
+  //   phone: "123456789",
+  //   customerType: "SPA",
+  //   user_id: "1",
+  //   addressDTO: {
+  //     street: "via abc",
+  //     houseNumber: "22",
+  //     country: "Roma",
+  //     cap: "01234",
+  //     municipality_id: "002",
+  //   },
+  // });
 
   const [formCustomer, setCustomer] = useState({
     companyName: "",
@@ -47,31 +46,45 @@ function BasicExample() {
     email: "",
     pec: "",
     phone: "",
-    customerType: "SPA", //dropdown SPA ecc
+    customerType: "", //dropdown SPA ecc
     user_id: 1,
-    addressDTO: {
-      street: "test", //a mano
-      houseNumber: "test", //a mano
-      country: "test",
-      cap: "0000",
-      municipality_id: 500, // dropdown
-    },
+    addressDTO: null
   });
+
+const [addressDTO, setAddressDTO] = useState({
+  street: "", //a mano
+  houseNumber: "", //a mano
+  country: "",
+  cap: "",
+  municipality_id: "", // dropdown
+})
+
+
+
+
   var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJyaSIsImlhdCI6MTY4NzUxNDM2NiwiZXhwIjoxNjg4Mzc4MzY2fQ.6avIVi5LALw3lXiD8w006drok-bgE_o8oiEPS-cRVJXn1W6YTAJQGTe9pqSOpcta");
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append(
+    "Authorization",
+    "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJyaSIsImlhdCI6MTY4NzUxNDM2NiwiZXhwIjoxNjg4Mzc4MzY2fQ.6avIVi5LALw3lXiD8w006drok-bgE_o8oiEPS-cRVJXn1W6YTAJQGTe9pqSOpcta"
+  );
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
+    console.log(addressDTO);
+    setCustomer({
+      ...formCustomer, 
+      addressDTO: addressDTO
+    })
     fetch("http://localhost:8080/api/customer", {
       method: "POST",
-      body: JSON.stringify(customer),
+      body: JSON.stringify(formCustomer),
       //myHeaders,
-         headers: {
-           'Content-type': 'application/json; charset=UTF-8',
-           Authentication: "Bearer " + token,
-         },
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        Authorization: "Bearer " + token,
+      },
     })
       .then((response) => {
         if (!response.ok) {
@@ -104,6 +117,13 @@ myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJya
     console.log("sto cambiando stato");
     setCustomer({
       ...formCustomer,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handleChangeDTO = (event) => {
+    console.log(event.target.name, event.target.value);
+    setAddressDTO({
+      ...addressDTO,
       [event.target.name]: event.target.value,
     });
   };
@@ -354,32 +374,32 @@ myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJya
                   placeholder="Via"
                   name="street"
                   className="mt-3"
-                  value={formCustomer.street}
-                  onChange={handleChange}
+                  // value={formCustomer.addressDTO.street}
+                  onChange={handleChangeDTO}
                 />
                 <Form.Control
                   type="text"
                   placeholder="Numero civico"
                   name="houseNumber"
                   className="mt-3"
-                  value={formCustomer.houseNumber}
-                  onChange={handleChange}
+                  // value={formCustomer.addressDTO.houseNumber}
+                  onChange={handleChangeDTO}
                 />
                 <Form.Control
                   type="text"
                   placeholder="Paese"
                   name="country"
                   className="mt-3"
-                  value={formCustomer.country}
-                  onChange={handleChange}
+                  // value={formCustomer.addressDTO.country}
+                  onChange={handleChangeDTO}
                 />
                 <Form.Control
                   type="text"
                   placeholder="CAP"
                   name="cap"
                   className="mt-3"
-                  value={formCustomer.cap}
-                  onChange={handleChange}
+                  // value={formCustomer.addressDTO.cap}
+                  onChange={handleChangeDTO}
                 />
                 <Form.Select
                   className="mt-3"
@@ -401,8 +421,8 @@ myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJya
                 <Form.Select
                   className="mt-3"
                   name="municipality_id"
-                  value={formCustomer.municipality_id}
-                  onChange={handleChange}
+                  // value={formCustomer.addressDTO.municipality_id}
+                  onChange={handleChangeDTO}
                 >
                   <option value="">Seleziona un comune:</option>
                   {municipality != null ? (
@@ -430,3 +450,4 @@ myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJya
 }
 
 export default BasicExample;
+
