@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Logo from "../img/logonobg.png";
 
 function RegisterPage() {
+  
+  
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
