@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.epic_energy.epic_energy_service.security.payload.CustomerDto;
 import com.epic_energy.epic_energy_service.services.AddressService;
 import com.epic_energy.epic_energy_service.services.CustomerService;
@@ -35,10 +34,10 @@ public class CustomerController {
 	}
 
 	@PostMapping()
-	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<?> createCustomer(@RequestBody CustomerDto c) {
-
-	return ResponseEntity.ok(customerService.saveCustomer(c))	;
+	@PreAuthorize("isAuthenticated()")
+	public void createCustomer(@RequestBody CustomerDto c) {
+		System.out.println(c);
+		customerService.saveCustomer(c);
 	}
 
 	@GetMapping

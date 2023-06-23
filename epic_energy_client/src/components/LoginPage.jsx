@@ -38,9 +38,11 @@ function LoginPage() {
         navigate("/home");
       } else {
         console.log("Login failed");
+        alert("Username or password wrong!");
       }
     } catch (error) {
       console.log("An error occurred while logging in");
+      alert(error);
     }
   };
 

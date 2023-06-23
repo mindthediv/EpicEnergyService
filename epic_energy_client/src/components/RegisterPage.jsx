@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Logo from "../img/logonobg.png";
 
 function RegisterPage() {
+  
+  
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
@@ -34,11 +36,16 @@ function RegisterPage() {
 
       if (response.ok) {
         console.log("Registrazione avvenuta con successo");
+        alert("Registrazione avviata con successo");
+
       } else {
         console.log("Errore durante la registrazione " + formData );
+        alert("Errore durante la registrazione");
+
       }
     } catch (error) {
       console.log("Si è verificato un errore durante la richiesta di registrazione");
+      alert(error);
     }
   };
 

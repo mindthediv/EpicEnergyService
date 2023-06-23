@@ -20,30 +20,26 @@ function BasicExample() {
   //mostra/nascondi modale
   const handleClose = () => setShow(false);
   const handleShow = function () {
-    // fetch("http://localhost:8080/api/auth/province/all", {
-    //   headers: {
-    //     Authentication: "Bearer" + token,
-    //   },
-    // })
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error("Network response was not ok");
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log("Received data:", data);
-    //     setProvince(data);
-    //     console.log(province)
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error:", error);
-    //     // Handle any errors that occurred during the request
-    //   });
-
     setShow(true);
   };
-  //indirizzo dal modale
+
+  // var obj = JSON.stringify({
+  //   companyName: "Abc",
+  //   iva: "123456789",
+  //   email: "abc@example.com",
+  //   pec: "abc.pec@example.com",
+  //   phone: "123456789",
+  //   customerType: "SPA",
+  //   user_id: "1",
+  //   addressDTO: {
+  //     street: "via abc",
+  //     houseNumber: "22",
+  //     country: "Roma",
+  //     cap: "01234",
+  //     municipality_id: "002",
+  //   },
+  // });
+
   const [formCustomer, setCustomer] = useState({
     companyName: "",
     iva: "",
@@ -51,24 +47,44 @@ function BasicExample() {
     pec: "",
     phone: "",
     customerType: "", //dropdown SPA ecc
-    user_id: "",
-    address: {
-      street: "", //a mano
-      houseNumber: "", //a mano
-      country: "",
-      cap: "",
-      municipality_id: "", // dropdown
-    },
+    user_id: 1,
+    addressDTO: null
   });
+
+const [addressDTO, setAddressDTO] = useState({
+  street: "", //a mano
+  houseNumber: "", //a mano
+  country: "",
+  cap: "",
+  municipality_id: "", // dropdown
+})
+
+
+
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append(
+    "Authorization",
+    "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWJyaSIsImlhdCI6MTY4NzUxNDM2NiwiZXhwIjoxNjg4Mzc4MzY2fQ.6avIVi5LALw3lXiD8w006drok-bgE_o8oiEPS-cRVJXn1W6YTAJQGTe9pqSOpcta"
+  );
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
+    console.log(addressDTO);
+    setCustomer({
+      ...formCustomer, 
+      addressDTO: addressDTO
+    })
     fetch("http://localhost:8080/api/customer", {
       method: "POST",
+      body: JSON.stringify(formCustomer),
+      //myHeaders,
       headers: {
-        Authentication: "Bearer " + token,
+        "Content-type": "application/json; charset=UTF-8",
+        Authorization: "Bearer " + token,
       },
-      body: JSON.stringify(event)
     })
       .then((response) => {
         if (!response.ok) {
@@ -84,7 +100,7 @@ function BasicExample() {
         console.error("Error:", error);
         // Handle any errors that occurred during the request
       });
-
+    console.log(formCustomer);
     handleClose();
   };
 
@@ -98,8 +114,16 @@ function BasicExample() {
   };
 
   const handleChange = (event) => {
+    console.log("sto cambiando stato");
     setCustomer({
       ...formCustomer,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handleChangeDTO = (event) => {
+    console.log(event.target.name, event.target.value);
+    setAddressDTO({
+      ...addressDTO,
       [event.target.name]: event.target.value,
     });
   };
@@ -156,26 +180,26 @@ function BasicExample() {
     // const provincia = p.target.value;
     // console.log(provincia)
     if (selectedProvince) {
-    fetch("http://localhost:8080/api/municipality?p=" + selectedProvince, {
-      headers: {
-        Authentication: "Bearer " + token,
-      },
-      //body: JSON.stringify(p)
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
+      fetch("http://localhost:8080/api/municipality?p=" + selectedProvince, {
+        headers: {
+          Authentication: "Bearer " + token,
+        },
+        //body: JSON.stringify(p)
       })
-      .then((municipality) => {
-        setMunicipality(municipality); // Update the state with the fetched data
-        console.log(municipality);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        // Handle any errors that occurred during the request
-      });
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((municipality) => {
+          setMunicipality(municipality); // Update the state with the fetched data
+          console.log(municipality);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Handle any errors that occurred during the request
+        });
     }
   }, [selectedProvince]);
 
@@ -272,6 +296,7 @@ function BasicExample() {
         <Button className="button-article mt-3 mx-4" onClick={handleShow}>
           Inviaci i dati
         </Button>
+
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
@@ -284,41 +309,59 @@ function BasicExample() {
               >
                 <Form.Label>Inserisci i tuoi dati</Form.Label>
                 <Form.Control
-                  type="companyName"
+                  type="text"
                   placeholder="Nome Azienda"
                   autoFocus
+                  name="companyName"
                   className="mt-3"
+                  value={formCustomer.companyName}
+                  onChange={handleChange}
                 />
                 <Form.Control
                   type="iva"
                   placeholder="Iva"
                   autoFocus
+                  name="iva"
                   className="mt-3"
+                  value={formCustomer.iva}
+                  onChange={handleChange}
                 />
                 <Form.Control
                   type="email"
                   placeholder="Email"
                   autoFocus
+                  name="email"
                   className="mt-3"
+                  value={formCustomer.email}
+                  onChange={handleChange}
                 />
                 <Form.Control
                   type="pec"
                   placeholder="Pec"
                   autoFocus
+                  name="pec"
                   className="mt-3"
+                  value={formCustomer.pec}
+                  onChange={handleChange}
                 />
                 <Form.Control
                   type="number"
                   placeholder="Telefono"
                   autoFocus
+                  name="phone"
                   className="mt-3"
+                  value={formCustomer.phone}
+                  onChange={handleChange}
                 />
                 <Form.Control
                   as="select"
                   type="customerType"
                   placeholder="Tipo Cliente"
                   autoFocus
+                  name="customerType"
                   className="mt-3"
+                  value={formCustomer.customerType}
+                  onChange={handleChange}
                 >
                   <option value="PA">PA</option>
                   <option value="SAS">SAS</option>
@@ -331,26 +374,33 @@ function BasicExample() {
                   placeholder="Via"
                   name="street"
                   className="mt-3"
+                  // value={formCustomer.addressDTO.street}
+                  onChange={handleChangeDTO}
                 />
                 <Form.Control
                   type="text"
                   placeholder="Numero civico"
                   name="houseNumber"
                   className="mt-3"
+                  // value={formCustomer.addressDTO.houseNumber}
+                  onChange={handleChangeDTO}
                 />
                 <Form.Control
                   type="text"
                   placeholder="Paese"
                   name="country"
                   className="mt-3"
+                  // value={formCustomer.addressDTO.country}
+                  onChange={handleChangeDTO}
                 />
                 <Form.Control
                   type="text"
                   placeholder="CAP"
                   name="cap"
                   className="mt-3"
+                  // value={formCustomer.addressDTO.cap}
+                  onChange={handleChangeDTO}
                 />
-
                 <Form.Select
                   className="mt-3"
                   name="province"
@@ -368,7 +418,12 @@ function BasicExample() {
                   )}
                 </Form.Select>
 
-                <Form.Select className="mt-3" name="municipality">
+                <Form.Select
+                  className="mt-3"
+                  name="municipality_id"
+                  // value={formCustomer.addressDTO.municipality_id}
+                  onChange={handleChangeDTO}
+                >
                   <option value="">Seleziona un comune:</option>
                   {municipality != null ? (
                     municipality.map((m) => (
@@ -395,3 +450,4 @@ function BasicExample() {
 }
 
 export default BasicExample;
+
