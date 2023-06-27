@@ -29,7 +29,7 @@ function BasicExample() {
     <>
       <NavBar />
       
-      <Footer /> 
+      <Footer />
     </>
   );
 }
