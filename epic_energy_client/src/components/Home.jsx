@@ -74,7 +74,7 @@ const [addressDTO, setAddressDTO] = useState({
     event.stopPropagation();
     console.log(addressDTO);
     setCustomer({
-      ...formCustomer, 
+      ...formCustomer,
       addressDTO: addressDTO
     })
     fetch("http://localhost:8080/api/customer", {
